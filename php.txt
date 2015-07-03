@@ -1,0 +1,75 @@
+
+【2】Win32下apache2 用get方法传递中文参数会出错
+
+
+test.php?a=你好&b=你也好 [中国站长站]
+
+传递参数是会导致一个内部错误 中.国站长站
+
+解决办法:"test.php?a=".urlencode(你好)."&b=".urlencode(你也好) [中国站长站]
+1、关于PHP重定向 
+方法一：header("Location: index.php"); 
+方法二：echo "<script>window.location =/"$PHP_SELF/";</script>"; 
+方法三：echo "<META HTTP-EQUIV="Refresh" CONTENT="0; URL=index.php">";
+连接数据库13错误  解决方法:
+查到是selinux所引起的,但没找着相应的setsebool操作,只得暂时关闭selinux
+setenforce 0
+
+/etc/init.d/php-fpm start
+PHP extract() 函数从数组中把变量导入到当前的符号表中。
+对于数组中的每个元素，键名用于变量名，键值用于变量值。
+spl_autoload_register
+
+php 使用array_slice获取数组前几条数据
+
+
+
+
+	/**
+	 * 替换fckedit中的图片 添加域名
+	 * @param  string $content 要替换的内容
+	 * @param  string $strUrl 内容中图片要加的域名
+	 * @return string 
+	 * @eg 
+	 */
+	function replacePicUrl($content = null, $strUrl = null) {
+		if ($strUrl) {
+			//提取图片路径的src的正则表达式 并把结果存入$matches中  
+	    	preg_match_all("/<img(.*)src=\"([^\"]+)\"(.*)[^>]+>/isU",$content,$matches);
+	/**
+	 * preg_match_all("/<[img|IMG].*?src=[\'|\"](.*?(?:[\.gif|\.jpg|\.png]))[\'|\"].*?[\/]?>/",$content,$matches);
+	 */
+	    	$img = "";  
+	        if(!empty($matches)) {  
+	        //注意，上面的正则表达式说明src的值是放在数组的第三个中  
+	        $img = $matches[2];  
+	    //    $img = $matches[1];  
+	        }else {  
+	           $img = "";  
+	        }
+		      if (!empty($img)) {  
+	                $patterns= array();  
+	                $replacements = array();  
+	                foreach($img as $imgItem){  
+		                $final_imgUrl = $strUrl.$imgItem;  
+		                if (!in_array($final_imgUrl, $replacements)){
+		                	$replacements[] = $final_imgUrl;  
+							$img_new = "/".preg_replace(array("/\//i","/\(/","/\)/"),array("\/","\(","\)"),$imgItem)."/"; 
+							$patterns[] = $img_new;  
+		                }
+	                }  
+	  
+	                //让数组按照key来排序  
+	                ksort($patterns);  
+	                ksort($replacements);  
+	                //替换内容  
+	                $vote_content = preg_replace ($patterns, $replacements,$content);
+			
+					return $vote_content;
+			}else {
+				return $content;
+			}           		
+		} else {
+			return $content;
+		}
+	}

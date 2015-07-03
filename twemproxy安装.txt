@@ -1,0 +1,77 @@
+#rpm -qf /usr/bin/autoconf  
+rpm -e --nodeps autoconf-2.63     
+wget http://ftp.gnu.org/gnu/autoconf automake libtool
+./configure
+make && make install
+/usr/bin/autoconf -V
+git clone https://github.com/twitter/twemproxy.git  
+cd twemproxy/   
+CFLAGS="-ggdb3 -O0" autoreconf -fvi && ./configure --prefix=/usr/local/twemproxy  --enable-debug=log  
+make && make install
+# /usr/local/twemproxy/sbin/nutcracker -t  
+nutcracker: configuration file 'conf/nutcracker.yml' syntax is ok  
+cp conf/nutcracker.yml /usr/local/twemproxy/ 
+/usr/local/twemproxy/sbin/nutcracker -c /usr/local/twemproxy/nutcracker.yml  
+/usr/local/twemproxy/sbin/nutcracker -d -c /usr/local/twemproxy/nutcracker.yml    
+
+
+redis1:  
+  listen: 127.0.0.1:6379 #使用哪个端口启动Twemproxy  
+  redis: true #是否是Redis的proxy  
+  hash: fnv1a_64 #指定具体的hash函数  
+  distribution: ketama #具体的hash算法  
+  auto_eject_hosts: true #是否在结点无法响应的时候临时摘除结点  
+  timeout: 400 #超时时间（毫秒）  
+  server_retry_timeout: 2000 #重试的时间（毫秒）  
+  server_failure_limit: 1 #结点故障多少次就算摘除掉  
+  servers: #下面表示所有的Redis节点（IP:端口号:权重）  
+   - 127.0.0.1:6380:1  
+   - 127.0.0.1:6381:1  
+   - 127.0.0.1:6382:1  
+  
+redis2:  
+  listen: 0.0.0.0:10000  
+  redis: true  
+  hash: fnv1a_64  
+  distribution: ketama  
+  auto_eject_hosts: false  
+  timeout: 400  
+  servers:  
+   - 127.0.0.1:6379:1  
+   - 127.0.0.1:6380:1  
+   - 127.0.0.1:6381:1  
+   - 127.0.0.1:6382:1  
+
+
+$ yum install autoconf
+$ yum install automake
+$ yum install m4
+
+3. 启动和停止
+
+(1) 启动
+
+nutcracker -d -v 6 -o nutcracker.log -c nutcracker.yml -m 16384
+
+4. 迁移现有的单台Redis数据至nutcracker
+
+(1) 下载python工具 redis-dump-load
+
+下载后解压。
+
+安装依赖项
+
+easy_install redis
+easy_install simplejson
+ 
+
+(2) 导出json格式的dump文件
+
+python redisdl.py -H 127.0.0.1 -p 6379 -E utf-8 > dump.json
+(3) 导入json格式的dump文件
+
+python redisdl.py -l -H 192.168.1.13 -p 6379 -E utf-8 < dump.json
+(4) 运行时如果出现如下警告信息：
+
+/usr/lib/python2.6/site-packages/redis-2.10.3-py2.6.egg/redis/client.py:404: DeprecationWarning: "charset" is deprecated. Use "encoding" instead
+意思是脚本中使用charset的参数在新版中已经被废弃，改为encoding。这个直接修改一下redisdl.py, 将其中2处 "charset=encoding"，改为"encoding=encoding"即可。 
