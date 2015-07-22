@@ -1,4 +1,5 @@
-
+phpunit
+simpletest
 【2】Win32下apache2 用get方法传递中文参数会出错
 
 
