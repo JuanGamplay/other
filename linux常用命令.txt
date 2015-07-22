@@ -1,9 +1,11 @@
+./mongod --dbpath=/data/mongodb_data/ --logpath=/data/mongodb_log/mongodb.log --logappend&  
  telnet baidu.com 80
 lsb_release -a
 rpm
  Õ¯ø®…Ë÷√cd /etc/sysconfig/network-scripts/
 ulimit -HSn 65536
 netstat -anpo | grep "php-cgi" | wc -l
+setenforce 0 
 twemproxy :
 http://ftp.gnu.org/gnu/
 yum install libtool

@@ -1,4 +1,5 @@
-
+update mysql.user set password="yourpassword" where user="root"
+MySQL的INSERT DELAYED
 1.如何删除表中的重复记录？(这里指记录的每个字段都要相同) 
 select  distinct  *  into  #temp  from  tab   
 delete  tab   
