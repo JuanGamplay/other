@@ -1,6 +1,178 @@
 ignore_user_abort();           // 即使Client断开(如关掉浏览器)，PHP脚本也可以继续执行. 
+<<<<<<< HEAD
 phpunit
 simpletest
+=======
+避免php文件反复调用数据库header("Location: cust_receipt.php");   后添加exit。避免后面输出。
+
+2：调试你的程序
+
+在运行时必须知道某个变量为何值。我是这样做的，建立一文件debug.php,其内容如下:
+
+PHP代码:--------------------------------------------------------------------------------
+
+<?PHP
+Ob_Start();
+Session_Start();
+Echo "<pre>";
+
+Echo "本页得到的_GET变量有:";
+Print_R($_GET);
+
+Echo "本页得到的_POST变量有:";
+Print_R($_POST);
+
+Echo "本页得到的_COOKIE变量有:";
+Print_R($_COOKIE);
+
+Echo "本页得到的_SESSION变量有:";
+Print_R($_SESSION);
+Echo "</pre>";
+?>
+
+--------------------------------------------------------------------------------
+
+然后在php.ini中设置：include_path = "c:/php"，并将debug.php放在此文件夹,
+以后就可以在每个网页里包含此文件，查看得到的变量名和值.
+
+
+
+4:为什么我向另一网页传送变量时,只得到前半部分,以空格开头的则全部丢失
+PHP代码:--------------------------------------------------------------------------------
+
+<?php
+$Var="hello php";
+$post= "receive.php?Name=".urlencode($Var);
+header("location:$post");
+?>
+5:如何截取指定长度汉字而不会出现以"?>"结尾,超出部分以"..."代替
+
+
+一般来说,要截取的变量来自Mysql,首先要保证那个字段长度要足够长,一般为char(200),可以保持100个汉字，包括标点.
+
+PHP代码:--------------------------------------------------------------------------------
+
+<?PHP
+$str="这个字符好长呀,^_^";
+$Short_Str=showShort($str,4);//截取前面4个汉字,结果为:这个字符...
+Echo   "$Short_Str";
+Function csubstr($str,$start,$len) 
+{ 
+$strlen=strlen($str); 
+$clen=0; 
+for($i=0;$i<$strlen;$i++,$clen++) 
+{ 
+if ($clen>=$start+$len) 
+break; 
+if(ord(substr($str,$i,1))>0xa0) 
+{ 
+if ($clen>=$start) 
+$tmpstr.=substr($str,$i,2); 
+$i++; 
+} 
+else 
+{ 
+if ($clen>=$start) 
+$tmpstr.=substr($str,$i,1); 
+} 
+}
+
+return $tmpstr; 
+} 
+Function showShort($str,$len) 
+{ 
+$tempstr = csubstr($str,0,$len); 
+if ($str<>$tempstr) 
+$tempstr .= "..."; //要以什么结尾,修改这里就可以.
+
+return $tempstr; 
+}
+
+---------
+7:如何使Html/PHP格式的字符串不被解释,而是照原样显示
+
+
+PHP代码:--------------------------------------------------------------------------------
+
+<?PHP
+$str="<h1>PHP</h1>";
+Echo "被解释过的: ".$str."<br>经过处理的:";
+Echo   htmlentities(nl2br($str));
+?>
+
+9:我怎么知道系统默认支持什么函数
+
+
+PHP代码:--------------------------------------------------------------------------------
+
+<?php 
+$arr = get_defined_functions(); 
+
+12:我想在每个文件最前，最后面都加上一文件.但一个一个添加很麻烦
+
+1:打开php.ini文件
+设置 include_path= "c:"
+
+2:写两个文件 
+auto_prepend_file.php 和 auto_append_file.php 保存在c盘,他们将自动依附在每个php文件的头部和尾部.
+
+3:在php.ini中找到:
+Automatically add files before or after any PHP document.
+auto_prepend_file = auto_prepend_file.php;依附在头部
+auto_append_file = auto_append_file.php;依附在尾部
+
+以后你每个php文件就相当于
+
+PHP代码:--------------------------------------------------------------------------------
+
+<?php 
+Include "auto_prepend_file.php" ;
+
+.......//这里是你的程序
+
+
+Include "auto_append_file.php";
+?>
+18:数据放入数据库和取出来显示在页面需要注意什么
+
+入库时
+$str=addslashes($str);
+$sql="insert into `tab` (`content`) values('$str')";
+出库时
+$str=stripslashes($str);
+显示时
+$str=htmlspecialchars(nl2br($str)) ;
+
+ 
+
+20:我点击后退按钮,为什么之前填写的东西不见
+
+这是因为你使用了session.
+解决办法:
+
+PHP代码:--------------------------------------------------------------------------------
+
+<?php 
+session_cache_limiter('private, must-revalidate');
+session_start(); 
+...........
+..........
+?>
+26:用Apache后,主页出现乱码
+
+
+方法一: 
+AddDefaultCharset ISO-8859-1 改为 AddDefaultCharset off
+
+方法二: 
+AddDefaultCharset GB2312
+========================================================
+tip:
+大家贴代码时GB2312会被解释成??????
+
+改成这样就不会
+[color=#000000]GB[/color]2312
+>>>>>>> origin/master
 【2】Win32下apache2 用get方法传递中文参数会出错
 
 

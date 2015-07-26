@@ -1,19 +1,21 @@
-
- yum install vixie-cron crontabs   
+yum install vixie-cron crontabs   
 service crond 
 /var/log/crons
 /var/spool/cron
-* * * * *  ??????????????
-./mongod --dbpath=/data/mongodb_data/ --logpath=/data/mongodb_log/mongodb.log --logappend& telnet baidu.com 80
+* * * * *  日和星期是或的关系
+
+./mongod --dbpath=/data/mongodb_data/ --logpath=/data/mongodb_log/mongodb.log --logappend&  
+ telnet baidu.com 80
 lsb_release -a
 rpm
  网卡设置cd /etc/sysconfig/network-scripts/
 ulimit -HSn 65536
 netstat -anpo | grep "php-cgi" | wc -l
+setenforce 0 
 twemproxy :
 http://ftp.gnu.org/gnu/
 yum install libtool
-
+setenforce 0
 名称：ps
 
 使用权限：所有使用者
@@ -114,3 +116,5 @@ http://www.cnblogs.com/bluefrog/archive/2012/03/01/2374922.html
  
 重启Apache：
 # /usr/local/apache2/bin/apachectl restart
+
+//726
