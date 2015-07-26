@@ -1,0 +1,116 @@
+
+ yum install vixie-cron crontabs   
+service crond 
+/var/log/crons
+/var/spool/cron
+* * * * *  ??????????????
+./mongod --dbpath=/data/mongodb_data/ --logpath=/data/mongodb_log/mongodb.log --logappend& telnet baidu.com 80
+lsb_release -a
+rpm
+ 网卡设置cd /etc/sysconfig/network-scripts/
+ulimit -HSn 65536
+netstat -anpo | grep "php-cgi" | wc -l
+twemproxy :
+http://ftp.gnu.org/gnu/
+yum install libtool
+
+名称：ps
+
+使用权限：所有使用者
+
+使用方式：ps [options] [--help]
+
+说明：显示瞬间行程 (process) 的动态
+
+参数：ps的参数非常多, 在此仅列出几个常用的参数并大略介绍含义
+
+-A    列出所有的进程
+
+-w    显示加宽可以显示较多的资讯
+
+-au    显示较详细的资讯
+
+-aux    显示所有包含其他使用者的行程
+
+
+
+rpm -qa|grep -i mysql ＃[搜索指定rpm包是否安装]--all搜索*httpd*
+
+yum remove php
+netstat -anp | more<==这个指令很常下达
+假如我要执行iostat这个命令来查看CPU与存储设备状态，可是执行却发现没有这个命令
+于是执行yum install iostat，结果说找不到该软件，使用下面的办法可以解决
+yum search iostat就能查到和iostat相关的安装包了，
+另外想安装一个程序，只记得一部分名称，也可以用这个办法来实现安装
+yum search png |grep png
+就能找到我们想安装的libpng这个名称
+export LANG=zh_CN.UTF-8
+
+ mysql 安装  yum install mysql-server  mysql-devel  mysql
+mysqladmin -u root password 123456
+GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' IDENTIFIED BY 'mypassword' WITH GRANT OPTION;
+
+
+
+查看日志tail -f error.log
+替换 grep -lr InShopNC /test/model2 |xargs  sed -i 's/InShopNC/Suneee/g'
+
+开机启动mysql
+chkconfig --levels 235 mysqld on chkconfig --levels 235 httpd on
+
+
+
+安装eaccelerator
+yum install php-eaccelerator 
+
+
+yum list memcached
+yum install  memcached
+ps aux | grep memcached
+telnet 127.0.0.1 12677
+cd /usr/bin/
+
+五、安装zend guard loader（可选）
+安装yum库文件
+wget -q -O - http://www.atomicorp.com/installers/atomic.sh | sh
+安装zend guard loader
+yum install php-zend-guard-loader
+重启apache服务
+service httpd restart
+
+重新转向不存在url格式: Redirect old-URL new-URL
+
+
+php - i | grep cURL
+
+
+# wget http://pecl.php.net/get/vld-0.11.2.tgz
+# tar zxvf vld-0.11.2.tgz
+# cd ./vld-0.11.2
+# /usr/local/php/bin/phpize              或者直接phpize
+./configure --with-php-config=/usr/bin/php-config --enable-vld
+# make && make install
+---------------------------------
+编辑php.ini文件激活vld扩展：
+php.ini位置
+#cd /usr/local/php/lib
+增加
+extension=vld.so
+
+swoole安装
+https://github.com/swoole/swoole-src
+ ./configure --with-php-config=/usr/bin/php-config
+extension=/usr/lib/php/modules/swoole.so
+http://www.swoole.com/
+
+xhprof安装
+wget http://pecl.php.net/get/xhprof-0.9.2.tgz
+./configure --with-php-config=/usr/bin/php-config
+
+extension=xhprof.so;
+xhprof.output_dir=/tmp/xhprof
+http://www.cnblogs.com/bluefrog/archive/2012/03/01/2374922.html
+
+ 
+重启Apache：
+# /usr/local/apache2/bin/apachectl restart

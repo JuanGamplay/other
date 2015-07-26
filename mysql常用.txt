@@ -1,0 +1,766 @@
+update mysql.user set password="yourpassword" where user="root"
+MySQL??INSERT DELAYED
+1.如何删除表中的重复记录？(这里指记录的每个字段都要相同) 
+select  distinct  *  into  #temp  from  tab   
+delete  tab   
+insert  tab  select  *  from  #temp   
+drop  table  #temp 
+
+
+
+hongyi@suneee.com/sz@suneee
+show processlist; 显示哪些线程正在运行
+SHOW VARIABLES  显示系统变量和值
+—log-bin
+ SET PROFILING=1;SELECT * FROM mysql.user;SHOW PROFILE;show profiles\G
+SHOW profile CPU,BLOCK IO io FOR query 1;查看资源使用
+
+
+182.简述Linux下安装Mysql的过程?
+
+答：
+
+Groupadd mysql 添加一个用户组mysql
+
+Useradd -g mysql mysql 添加一个mysql用户指定分组为mysql
+
+Cd /lamp/mysql 进入mysql目录
+
+./configure –prefix=/usr/local/mysql/ –with-extra-charsets=all
+
+Make
+
+Make all
+
+flush privileges
+
+b-tree full-tree
+
+flush logs
+show global variables like 'log_bin'; 查看日志开启
+show master status;
+vim /etc/my.cnf
+log-bin = /var/mysqllog/logbin.log
+log-error = /var/mysqllog/logerr.log
+
+mysqladmin -u root -proot -h localhost ping
+mysqladmin -u root -proot -h localhost processlist
+
+几个常用用例：
+1.导出整个数据库
+ mysqldump -u 用户名 -p 数据库名 > 导出的文件名    
+ mysqldump -u wcnc -p smgp_apps_wcnc > wcnc.sql
+2.导出一个表
+ mysqldump -u 用户名 -p 数据库名 表名> 导出的文件名
+ mysqldump -u wcnc -p smgp_apps_wcnc users> wcnc_users.sql
+3.导出一个数据库结构
+  mysqldump -u wcnc -p -d --add-drop-table smgp_apps_wcnc >d:\wcnc_db.sql
+ -d 没有数据 --add-drop-table 在每个create语句之前增加一个drop table 
+4.导入数据库
+  常用source 命令
+  进入mysql数据库控制台，
+  如mysql -u root -p 
+  
+  mysql>use 数据库
+  然后使用source命令，后面参数为脚本文件（如这里用到的.sql）
+  mysql>source d:\wcnc_db.sql
+
+CHECK TABLE `ecs_admin_user`
+REPAIR TABLE `ecs_admin_user`
+
+Innodb的行锁机制的实现是通过索引来完成的。
+
+SHOW GRANTS FOR 'username'@'hostname
+
+mysql权限级别  global  database table column routine
+GRANT ALTER ON test.* TO 'def'@'localhost';
+grant all on test.t5 to 'abc';
+
+
+
+第一、同一时刻取出所有数据；
+第二、数据库中的数据处于静止状态。
+对于事务支持的存储引擎，如Innodb 或者BDB 等，
+我们就可以通过控制将整个备份过程控制在同一个事务中，来达到备份数据的一致性和完整
+性，而且mysqldump 程序也给我们提供了相关的参数选项来支持该功能，就是通过“--
+single-transaction”选项，可以不影响数据库的任何正常服务。
+
+
+mysqldump 程
+序自己也提供了相关选项如“--lock-tables”和“--lock-all-tables”，在执行之前会锁
+定表，执行结束后自动释放锁定。这里有一点需要注意的就是，“--lock-tables”并不是一
+次性将需要dump 的所有表锁定，而是每次仅仅锁定一个数据库的表，如果你需要dump 的表
+分别在多个不同的数据库中，一定要使用“--lock-all-tables”才能确保数据的一致完整
+性。
+
+当通过mysqldump 生成INSERT 语句的逻辑备份文件的时候，有一个非常有用的选项可
+以供我们使用，那就是“--master-data[=value]”。当添加了“--master-data=1”的时候，
+mysqldump 会将当前MySQL 使用到binlog 日志的名称和位置记录到dump 文件中，并且是被
+以CHANGE_MASTER 语句的形式记录，如果仅仅只是使用“--master-data”或者“--masterdata＝
+2”，则CHANGE_MASTER 语句会以注释的形式存在。这个选项在实施slave 的在线搭建
+的时候是非常有用的，即使不是进行在线搭建slave，也可以在某些情况下做恢复的过程中
+通过备份的binlog 做进一步恢复操作。
+
+
+而IO 性能
+本身又可以分为两类，一类是每秒可提供的IO 访问次数，也就是我们常说的IOPS 数量，还有一种就是每
+秒的IO 总流量，也就是我们常说的IO 吞吐量。
+其次，由于数据库主机和普通的应用程序服务器相比，资源要相对集中很多，单台主机上所需要进
+行的计算量自然也就比较多，所以数据库主机的CPU 处理能力也不能忽视。
+最后，由于数据库负责数据的存储，与各应用程序的交互中传递的数据量比其他各类服务器都要
+多，所以数据库主机的网络设备的性能也可能会成为系统的瓶颈。
+
+
+
+
+虽然能够在并发处理能力上面有较大的优势，但是行级锁定也因此带来了不少弊端。由于锁定资源
+的颗粒度很小，所以每次获取锁和释放锁需要做的事情也更多，带来的消耗自然也就更大了。此外，行
+级锁定也最容易发生死锁。
+
+使用表级锁定的主要是MyISAM，Memory，CSV 等一些非事务性存储引擎，而使用
+行级锁定的主要是Innodb 存储引擎和NDB Cluster 存储引擎，
+
+。当Innodb 检测到系统中产生了死锁之后，Innodb 会通过相应的判断来选这产
+生死锁的两个事务中较小的事务来回滚，而让另外一个较大的事务成功完成。
+
+
+
+要想合理利用Innodb 的行级锁定，做到扬长避短，我们必须做好以下工作：
+a) 尽可能让所有的数据检索都通过索引来完成，从而避免Innodb 因为无法通过索引键加锁而升级
+为表级锁定；
+b) 合理设计索引，让Innodb 在索引键上面加锁的时候尽可能准确，尽可能的缩小锁定范围，避免
+造成不必要的锁定而影响其他Query 的执行；
+c) 尽可能减少基于范围的数据检索过滤条件，避免因为间隙锁带来的负面影响而锁定了不该锁定
+的记录；
+d) 尽量控制事务的大小，减少锁定的资源量和锁定时间长度；
+e) 在业务环境允许的情况下，尽量使用较低级别的事务隔离，以减少MySQL 因为实现事务隔离级
+别所带来的附加成本；
+
+由于Innodb 的行级锁定和事务性，所以肯定会产生死锁，下面是一些比较常用的减少死锁产生概率
+的的小建议，读者朋友可以根据各自的业务特点针对性的尝试：
+a) 类似业务模块中，尽可能按照相同的访问顺序来访问，防止产生死锁；
+b) 在同一个事务中，尽可能做到一次锁定所需要的所有资源，减少死锁产生概率；
+c) 对于非常容易产生死锁的业务部分，可以尝试使用升级锁定颗粒度，通过表级锁定来减少死锁
+产生的概率；
+
+
+，Query 语句的优化思路和原则主要提现在以下几个方面：
+1. 优化更需要优化的Query；
+2. 定位优化对象的性能瓶颈；
+3. 明确的优化目标；
+4. 从Explain 入手；
+5. 多使用profile
+6. 永远用小结果集驱动大的结果集；
+7. 尽可能在索引中完成排序；
+8. 只取出自己需要的Columns；
+9. 仅仅使用最有效的过滤条件；
+10. 尽可能避免复杂的Join 和子查询；
+
+
+mysql> create table innodb_monitor(a int) engine=innodb;
+“SHOW INNODB STATUS”
+
+
+优化本身就是一门平衡与取舍的艺术，只有懂得取舍，平衡整体，才能让系统更优。
+
+
+
+
+我们先看一下在MySQL Explain 功能中给我们展示的各种信息的解释：
+◆ ID：Query Optimizer 所选定的执行计划中查询的序列号；
+◆ Select_type：所使用的查询类型，主要有以下这几种查询类型
+◇ DEPENDENT SUBQUERY：子查询中内层的第一个SELECT，依赖于外部查询的结果集；
+◇ DEPENDENT UNION：子查询中的UNION，且为UNION 中从第二个SELECT 开始的后面所有
+SELECT，同样依赖于外部查询的结果集；
+◇ PRIMARY：子查询中的最外层查询，注意并不是主键查询；
+◇ SIMPLE：除子查询或者UNION 之外的其他查询；
+◇ SUBQUERY：子查询内层查询的第一个SELECT，结果不依赖于外部查询结果集；
+◇ UNCACHEABLE SUBQUERY：结果集无法缓存的子查询；
+◇ UNION：UNION 语句中第二个SELECT 开始的后面所有SELECT，第一个SELECT 为PRIMARY
+◇ UNION RESULT：UNION 中的合并结果；
+◆ Table：显示这一步所访问的数据库中的表的名称；
+◆ Type：告诉我们对表所使用的访问方式，主要包含如下集中类型；
+◇ all：全表扫描
+◇ const：读常量，且最多只会有一条记录匹配，由于是常量，所以实际上只需要读一次；
+◇ eq_ref：最多只会有一条匹配结果，一般是通过主键或者唯一键索引来访问；
+◇ fulltext：
+◇ index：全索引扫描；
+◇ index_merge：查询中同时使用两个（或更多）索引，然后对索引结果进行merge 之后再读
+取表数据；
+◇ index_subquery：子查询中的返回结果字段组合是一个索引（或索引组合），但不是一个
+主键或者唯一索引；
+◇ rang：索引范围扫描；
+◇ ref：Join 语句中被驱动表索引引用查询；
+◇ ref_or_null：与ref 的唯一区别就是在使用索引引用查询之外再增加一个空值的查询；
+◇ system：系统表，表中只有一行数据；
+◇ unique_subquery：子查询中的返回结果字段组合是主键或者唯一约束；
+◇
+◆ Possible_keys：该查询可以利用的索引. 如果没有任何索引可以使用，就会显示成null，这一
+项内容对于优化时候索引的调整非常重要；
+◆ Key：MySQL Query Optimizer 从possible_keys 中所选择使用的索引；
+◆ Key_len：被选中使用索引的索引键长度；
+◆ Ref：列出是通过常量（const），还是某个表的某个字段（如果是join）来过滤（通过key）
+的；
+◆ Rows：MySQL Query Optimizer 通过系统收集到的统计信息估算出来的结果集记录条数；
+◆ Extra：查询中每一步实现的额外细节信息，主要可能会是以下内容：
+◇ Distinct：查找distinct 值，所以当mysql 找到了第一条匹配的结果后，将停止该值的查
+询而转为后面其他值的查询；
+◇ Full scan on NULL key：子查询中的一种优化方式，主要在遇到无法通过索引访问null
+值的使用使用；
+◇ Impossible WHERE noticed after reading const tables：MySQL Query Optimizer 通过
+收集到的统计信息判断出不可能存在结果；
+◇ No tables：Query 语句中使用FROM DUAL 或者不包含任何FROM 子句；
+◇ Not exists：在某些左连接中MySQL Query Optimizer 所通过改变原有Query 的组成而
+使用的优化方法，可以部分减少数据访问次数；
+◇ Range checked for each record (index map: N)：通过MySQL 官方手册的描述，当
+MySQL Query Optimizer 没有发现好的可以使用的索引的时候，如果发现如果来自前面的
+表的列值已知，可能部分索引可以使用。对前面的表的每个行组合，MySQL 检查是否可以使
+用range 或index_merge 访问方法来索取行。
+◇ Select tables optimized away：当我们使用某些聚合函数来访问存在索引的某个字段的
+时候，MySQL Query Optimizer 会通过索引而直接一次定位到所需的数据行完成整个查
+询。当然，前提是在Query 中不能有GROUP BY 操作。如使用MIN()或者MAX（）的时
+候；
+◇ Using filesort：当我们的Query 中包含ORDER BY 操作，而且无法利用索引完成排序操
+作的时候，MySQL Query Optimizer 不得不选择相应的排序算法来实现。
+◇ Using index：所需要的数据只需要在Index 即可全部获得而不需要再到表中取数据；
+◇ Using index for group-by：数据访问和Using index 一样，所需数据只需要读取索引即
+可，而当Query 中使用了GROUP BY 或者DISTINCT 子句的时候，如果分组字段也在索引
+中，Extra 中的信息就会是Using index for group-by；
+◇ Using temporary：当MySQL 在某些操作中必须使用临时表的时候，在Extra 信息中就会
+出现Using temporary 。主要常见于GROUP BY 和ORDER BY 等操作中。
+◇ Using where：如果我们不是读取表的所有数据，或者不是仅仅通过索引就可以获取所有需
+要的数据，则会出现Using where 信息；
+◇ Using where with pushed condition：这是一个仅仅在NDBCluster 存储引擎中才会出现
+的信息，而且还需要通过打开Condition Pushdown 优化功能才可能会被使用。控制参数
+为engine_condition_pushdown 。
+
+
+
+在Innodb 中如果通过主键来访问数据效率是非常高的，而如果是通过Secondary Index 来
+访问数据的话，Innodb 首先通过Secondary Index 的相关信息，通过相应的索引键检索到Leaf Node
+之后，需要再通过Leaf Node 中存放的主键值再通过主键索引来获取相应的数据行。
+
+
+
+
+1. Hash 索引仅仅只能满足“=”,“IN”和“<=>”查询，不能使用范围查询；
+由于Hash 索引所比较的是进行Hash 运算之后的Hash 值，所以Hash 索引只能用于等值的
+过滤，而不能用于基于范围的过滤，因为经过相应的Hash 算法处理之后的Hash 值的大小关
+系，并不能保证还和Hash 运算之前完全一样。
+2. Hash 索引无法被利用来避免数据的排序操作；
+由于Hash 索引中存放的是经过Hash 计算之后的Hash 值，而且Hash 值的大小关系并不一定
+和Hash 运算前的键值的完全一样，所以数据库无法利用索引的数据来避免任何和排序运算；
+3. Hash 索引不能利用部分索引键查询；
+对于组合索引，Hash 索引在计算Hash 值的时候是组合索引键合并之后再一起计算Hash 值，
+而不是单独计算Hash 值，所以当我们通过组合索引的前面一个或几个索引键进行查询的时
+候，Hash 索引也无法被利用到；
+4. Hash 索引在任何时候都不能避免表扫面；
+前面我们已经知道，Hash 索引是将索引键通过Hash 运算之后，将Hash 运算结果的Hash 值
+和所对应的行指针信息存放于一个Hash 表中，而且由于存在不同索引键存在相同Hash 值的
+可能，所以即使我们仅仅取满足某个Hash 键值的数据的记录条数，都无法直接从Hash 索引
+中直接完成查询，还是要通过访问表中的实际数据进行相应的比较而得到相应的结果。
+5. Hash 索引遇到大量Hash 值相等的情况后性能并不一定就会比B-Tree 索引高；
+对于选择性比较低的索引键，如果我们创建Hash 索引，那么我们将会存在大量记录指针信息
+存与同一个Hash 值相关连。这样要定位某一条记录的时候就会非常的麻烦，可能会浪费非常
+多次表数据的访问，而造成整体性能的地下。
+
+
+Full-text 索引
+Full-text 索引也就是我们常说的全文索引，目前在MySQL 中仅有MyISAM 存储引擎支持，而且也
+并不是所有的数据类型都支持全文索引。目前来说，仅有CHAR，VARCHAR 和TEXT 这三种数据类型的列可
+以建Full-text 索引。
+
+
+创建索引，所带来的最大益处就是将该字段作为检索条件的时候
+可以极大的提高检索效率，加快检索时间，降低检索过程中所需要读取的数据量。但是索引所给我们带
+来的收益只是提高表数据的检索效率吗？当然不是，索引还有一个非常重要的用途，那就是降低数据的
+排序成本。
+我们知道，每个索引中索引数据都是按照索引键键值进行排序后存放的，所以，当我们的Query 语
+句中包含排序分组操作的时候，如果我们的排序字段和索引键字段刚好一致，MySQL Query Optimizer
+就会告诉mysqld 在取得数据之后不用排序了，因为根据索引取得的数据已经是满足客户的排序要求。
+
+
+较频繁的作为查询条件的字段应该创建索引；
+◆ 唯一性太差的字段不适合单独创建索引，即使频繁作为查询条件；
+◆ 更新非常频繁的字段不适合创建索引；
+◆ 不会出现在WHERE 子句中的字段不该创建索引；
+
+
+通过创建多个单键索引啊。确实，我们可以将WHERE 子句中的每一
+个字段都创建一个单键索引。但是这样真的有效吗？在这样的情况下，MySQL Query Optimizer 大多数
+时候都只会选择其中的一个索引，然后放弃其他的索引。即使他选择了同时利用两个或者更多的索引通
+过INDEX_MERGE 来优化查询，可能所收到的效果并不会比选择其中某一个单键索引更高效。因为如果选
+择通过INDEX_MERGE 来优化查询，就需要访问多个索引，同时还要将通过访问到的几个索引进行merge
+操作，所带来的成本可能反而会比选择其中一个最有效的索引来完成查询更高。
+在MySQL 中，我们
+可以仅仅使用某个字段的前面部分内容做为索引键来索引该字段，来达到减小索引占用的存储空间和提
+高索引访问的效率。当然，前缀索引的功能仅仅适用于字段前缀比较随机重复性很小的字段。
+
+
+在Query 中增加Hint 提
+示MySQL Query Optimizer 告诉他该使用哪个索引而不该使用哪个索引，或者通过调整查询条件来达到
+相同的目的。
+我们这里再次通过在本章第2 节“Query 语句优化基本思路和原则”的“仅仅使用最有效的过滤条
+件”中示例的基础上将group_message 表的索引做部分调整，然后再进行分析。
+在group_message 上增加如下索引：
+create index group_message_author_subject on group_message(author,subject(16));
+EXPLAIN SELECT * FROM group_message
+-> FORCE INDEX(idx_group_message_author_subject)
+-> WHERE user_id = 3 AND author = '3' AND subject LIKE 'weiurazs%'\G
+
+
+1. 对于单键索引，尽量选择针对当前Query 过滤性更好的索引；
+2. 在选择组合索引的时候，当前Query 中过滤性最好的字段在索引字段顺序中排列越靠前越好；
+3. 在选择组合索引的时候，尽量选择可以能够包含当前Query 的WHERE 子句中更多字段的索
+引；
+4. 尽可能通过分析统计信息和调整Query 的写法来达到选择合适索引的目的而减少通过使用
+Hint 人为控制索引的选择，因为这会使后期的维护成本增加，同时增加维护所带来的潜在风险
+
+
+1. MyISAM 存储引擎索引键长度总和不能超过1000 字节；
+2. BLOB 和TEXT 类型的列只能创建前缀索引；
+3. MySQL 目前不支持函数索引；
+4. 使用不等于（!= 或者<>）的时候MySQL 无法使用索引；
+5. 过滤字段使用了函数运算后（如abs(column)），MySQL 无法使用索引；
+6. Join 语句中Join 条件字段类型不一致的时候MySQL 无法使用索引；
+7. 使用LIKE 操作的时候如果条件以通配符开始（ '%abc...'）MySQL 无法使用索引；
+8. 使用非等值查询的时候MySQL 无法使用Hash 索引；
+9.
+
+
+
+
+，Nested Loop Join 实际上就是通过驱动表
+的结果集作为循环基础数据，然后一条一条的通过该结果集中的数据作为过滤条件到下一个表中查询数
+据，然后合并结果。如果还有第三个参与Join，则再通过前两个表的Join 结果集作为循环基础数据，
+再一次通过循环查询条件到第三个表中查询数据，如此往复。
+
+1. 尽可能减少Join 语句中的Nested Loop 的循环总次数；
+2. 优先优化Nested Loop 的内层循环；
+3. 保证Join 语句中被驱动表上Join 条件字段已经被索引；
+4. 当无法保证被驱动表的Join 条件字段被索引且内存资源充足的前提下，不要太吝惜Join
+Buffer 的设置；
+
+
+
+
+
+
+如latin1 则最大存储长度为255 字节，但是如果使用gbk 则最大存储长度为510 字节。CHAR 类型
+的存储特点是不管我们实际存放多长数据，在数据库中都会存放M 个字符，不够的通过空格补上，M 默认
+为1。虽然CHAR 会通过空格补齐存放的空间，但是在访问数据的时候，MySQL 会忽略最后的所有空格，所
+以如果我们的实际数据中如果在最后确实需要空格，则不能使用CHAR 类型来存放
+
+
+1. 取出满足过滤条件的用于排序条件的字段以及可以直接定位到行数据的行指针信息，在Sort
+Buffer 中进行实际的排序操作，然后利用排好序之后的数据根据行指针信息返回表中取得客户端请
+求的其他字段的数据，再返回给客户端；
+2. 根据过滤条件一次取出排序字段以及客户端请求的所有其他字段的数据，并将不需要排序的字
+段存放在一块内存区域中，然后在Sort Buffer 中将排序字段和行指针信息进行排序，最后再利用
+排序后的行指针与存放在内存区域中和其他字段一起的行指针信息进行匹配合并结果集，再按照顺
+序返回给客户端。
+上面第一种排序算法是MySQL 一直以来就有的排序算法，而第二种则是从MySQL4.1 版本才开始增
+加的改进版排序算法。
+
+
+，可能需要排序的字段同时存在于两个表中，或者
+MySQL 在经过一次Join 之后才进行排序操作。这样的排序在MySQL 中并不能简单的里利用Sort
+Buffer 进行排序，而是必须先通过一个临时表将之前Join 的结果集存放入临时表之后在将临时表的数
+据取到Sort Buffer 中进行操作。
+
+
+一般情况下，在生产系统中很少有系统会打开查询日志。因为查询日志打开之后会将MySQL 中执行
+的每一条Query 都记录到日志中，会该系统带来比较大的IO 负担，而带来的实际效益却并不是非常大。
+“ log_slow_queries ” 参数显示了系统是否已经打开Slow Query Log 功能， 而
+“long_query_time”参数则告诉我们当前系统设置的Slow Query 记录执行时间超过多长的Query。在
+MySQL AB 发行的MySQL 版本中Slow Query Log 可以设置的最短慢查询时间为1 秒，这在有些时候可能没
+办法完全满足我们的要求，如果希望能够进一步缩短慢查询的时间限制，可以使用Percona 提供的
+microslow-patch
+
+order by
+1. 加大max_length_for_sort_data 参数的设置；
+2. 去掉不必要的返回字段；
+3. 增大sort_buffer_size 参数设置；
+
+
+1. 使用松散（Loose）索引扫描实现GROUP BY
+要利用到松散索引扫描实现GROUP BY，需要至少满足以下几个条件：
+◆ GROUP BY 条件字段必须在同一个索引中最前面的连续位置；
+◆ 在使用GROUP BY 的同时，只能使用MAX 和MIN 这两个聚合函数；
+◆ 如果引用到了该索引中GROUP BY 条件之外的字段条件的时候，必须以常量形式存在；
+
+2. 使用紧凑（Tight）索引扫描实现GROUP BY
+3. 使用临时表实现GROUP BY
+
+1. 尽可能让MySQL 可以利用索引来完成GROUP BY 操作，当然最好是松散索引扫描的方式最佳。
+在系统允许的情况下，我们可以通过调整索引或者调整Query 这两种方式来达到目的；
+2. 当无法使用索引完成GROUP BY 的时候，由于要使用到临时表且需要filesort，所以我们必须
+要有足够的sort_buffer_size 来供MySQL 排序的时候使用，而且尽量不要进行大结果集的GROUP
+BY 操作，因为如果超出系统设置的临时表大小的时候会出现将临时表数据copy 到磁盘上面再进行
+操作，这时候的排序分组操作性能将是成数量级的下降；
+
+
+1、数据库和表名应尽可能和所服务的业务模块名一致；
+2、服务于同一子模块的一类表尽量以子模块名（或部分单词）为前缀或后缀；
+3、表名应尽量包含与所存放数据相对应的单词；
+4、字段名称也尽量保持和实际数据相对应
+5、索引名称尽量包含所有的索引键字段名或者缩写，且各字段名在索引名中的顺序应与索引键在
+索引中的索引顺序一致，且尽量包含一个类似于idx 或者ind 之类的前缀或者后缀，以表名
+其对象类型是索引，同时还可以包含该索引所属表的名称；
+6、约束等其他对象也应该尽可能包含所属表或其他对象的名称，以表名各自关系。
+
+
+
+
+
+总的来说，Innodb 的事务日志文件设置的越大，系统的IO 性能也就越高，但是当遇到MySQL ，OS
+或者主机Crash 的时候系统所需要的恢复时间也就越长；反之，日志越小，IO 性能自然也就相对会差一
+些，但是当MySQL，OS 或者主机Crash 之后所需要的恢复时间也越小。所以，到底该将事务日志设置多
+大其实是一个整体权衡的问题，既要考虑到系统整体的性能，又要兼顾到Crash 之后的恢复时间。一般
+来说，在我个人维护的环境中，比较偏向于将事务日志设置为3 组，每个日志设置为256MB 大小，整体效
+果还算不错。
+
+
+源码包的编译参数中默认会以Debug 模式生成二进制代码，而Debug 模式给MySQL 带来的性能损失是
+比较大的，所以当我们编译准备安装的产品代码的时候，一定不要忘记使用“—without-debug”参数禁
+用Debug 模式。
+而“—with-mysqld-ldflags”和“—with-client-ldflags”两个编译参数如果设置为“-allstatic”
+的话，可以告诉编译器以静态方式编译来使编译结果代码得到最高的性能。使用静态编译和动
+态方式编译的代码相比，性能差距可能会达到5%到10%之多。
+就我个人来说最常使用的编译配置参数如下，各位可以参照自行增删相关内容：
+./configure --prefix=/usr/local/mysql \
+--without-debug \
+--without-bench \
+--enable-thread-safe-client \
+--enable-assembler \
+--enable-profiling \
+--with-mysqld-ldflags=-all-static \
+--with-client-ldflags=-all-static \
+--with-charset=latin1 \
+--with-extra-charset=utf8,gbk \
+--with-innodb \
+--with-csv-storage-engine \
+--with-federated-storage-engine \
+--with-mysqld-user=mysql \
+--without-embedded-server \
+--with-server-suffix=-community \
+--with-unix-socket-path=/usr/local/mysql/sock/mysql.sock
+
+
+
+
+
+。而后端的任何一个表的任何一条数据发生变化之后，也会通知Query
+Cache，需要将所有与该Table 有关的Query 的Cache 全部失效，并释放出之前占用的内存地址，以便后
+面其他的Query 能够使用。
+从上面的实现原理来看，Query Cache 确实是以比较简单的实现带来巨大性能收益的功能。但是很多
+人可能都忽略了使用QueryCache 之后所带来的负面影响：
+a) Query 语句的hash 运算以及hash 查找资源消耗。当我们使用Query Cache 之后，每条SELECT
+类型的Query 在到达MySQL 之后，都需要进行一个hash 运算然后查找是否存在该Query 的
+Cache，虽然这个hash 运算的算法可能已经非常高效了，hash 查找的过程也已经足够的优化
+了，对于一条Query 来说消耗的资源确实是非常非常的少，但是当我们每秒都有上千甚至几千
+条Query 的时候，我们就不能对产生的CPU 的消耗完全忽视了。
+b) Query Cache 的失效问题。如果我们的表变更比较频繁，则会造成Query Cache 的失效率非常
+高。这里的表变更不仅仅指表中数据的变更，还包括结构或者索引等的任何变更。也就是说我
+们每次缓存到Query Cache 中的Cache 数据可能在刚存入后很快就会因为表中的数据被改变而被
+清除，然后新的相同Query 进来之后无法使用到之前的Cache。
+c) Query Cache 中缓存的是Result Set ，而不是数据页，也就是说，存在同一条记录被Cache 多
+次的可能性存在。从而造成内存资源的过渡消耗。当然，可能有人会说我们可以限定Query
+Cache 的大小啊。是的，我们确实可以限定Query Cache 的大小，但是这样，Query Cache 就很
+容易造成因为内存不足而被换出，造成命中率的下降。
+
+MySQL 中针对Query Cache 有两个专
+用的SQL Hint（提示）：SQL_NO_CACHE 和SQL_CACHE，分别代表强制不使用Query Cache 和强制使用
+Query Cache。
+
+back_log：在MySQL 的连接请求等待队列中允许存放的最大连接请求数。
+
+如果我们的应用程序使用的短连接，Thread Cache 池的功效是最明显的。因为在短连接的数据
+库应用中，数据库连接的创建和销毁是非常频繁的，如果每次都需要让MySQL 新建和销毁相应
+的连接线程，那么这个资源消耗实际上是非常大的，而当我们使用了Thread Cache 之后，由于
+连接线程大部分都是在创建好了等待取用的状态，既不需要每次都重新创建，又不需要在使用
+完之后销毁， 所以可以节省下大量的系统资源。所以在短连接的应用系统中，
+thread_cache_size 的值应该设置的相对大一些，不应该小于应用系统对数据库的实际并发请求
+数。
+show status like '%thread%';
+
+SHOW STATUS LIKE 'connections';
+
+Threads_Cache_Hit = (Connections - Threads_created) / Connections * 100%
+
+在
+MySQL 中每个线程都是独立的打开自己需要的表的文件描述符，而不是通过共享已经打开的表的文件描述
+符的机制来实现
+
+table_cache = max_connections * N；
+
+每个
+Thread 都会创建自己独立的Buffer，而不是整个系统共享的Buffer，不要因为设置过大而造成系统内存
+不足。join_buffer_size sort_buffer_size
+
+MyISAM 仅仅缓存索引数据，并不会缓存实际的表数据信息到内存中，而是将这一工作交给
+了OS 级别的文件系统缓存。
+
+Key_Size = key_number * (key_length+4)/0.67
+Max_key_buffer_size < Max_RAM - QCache_Usage - Threads_Usage - System_Usage
+Threads_Usage = max_connections * (sort_buffer_size + join_buffer_size +
+read_buffer_size + read_rnd_buffer_size + thread_stack)   (175页)
+
+myisam_stats_method 参数的作用就是让我们告诉MyISAM 在收集统计信息的时候，是认为所有NULL
+值都是等同还是认为每个NULL 值都认为是完全不相等的值，所以其可设置的值也为nulls_unequal 和
+nulls_equal。
+
+innodb_buffer_pool_size 参数用来设置Innodb 最主要的Buffer(Innodb_Buffer_Pool)的大小，也
+就是缓存用户表及索引数据的最主要缓存空间，对Innodb 整体性能影响也最大。
+show status like 'Innodb_buffer_pool_%';
+
+
+
+
+
+Innodb 在事务隔离级别方面支持的信息如下：
+1. READ UNCOMMITTED
+常被成为Dirty Reads（脏读），可以说是事务上的最低隔离级别：在普通的非锁定模式下
+SELECT 的执行使我们看到的数据可能并不是查询发起时间点的数据，因而在这个隔离度下是非
+Consistent Reads（一致性读）；
+2. READ COMMITTED
+这个事务隔离级别有些类似Oracle 数据库默认的隔离级。属于语句级别的隔离，如通过
+SELECT ... FOR UPDATE 和SELECT ... LOCK IN SHARE MODE 来执行的请求仅仅锁定索引记录，而
+不锁定之前的间隙，因而允许在锁定的记录后自由地插入新记录。当然，这与Innodb 的锁定实现机
+制有关。如果我们的Query 可以很准确的通过索引定位到需要锁定的记录，则仅仅只需要锁定相关
+的索引记录，而不需要锁定该索引之前的间隙。但如果我们的Query 通过索引检索的时候无法通过
+索引准确定位到需要锁定的记录，或者是一个基于范围的查询，InnoDB 就必须设置next-key 或
+gap locks 来阻塞其它用户对范围内的空隙插入。Consistent Reads 的实现机制与Oracle 基本类
+似： 每一个Consistent Read，甚至是同一个事务中的，均设置并作为它自己的最新快照。
+这一隔离级别下，不会出现Dirty Read，但是可能出现Non-Repeatable Reads(不可重复读)
+和Phantom Reads（幻读）。
+3. REPEATABLE READ
+REPEATABLE READ 隔离级别是InnoDB 默认的事务隔离级。SELECT ... FOR UPDATE, SELECT
+... LOCK IN SHARE MODE, UPDATE, 和DELETE ，这些以唯一条件搜索唯一索引的，只锁定所找到
+的索引记录，而不锁定该索引之前的间隙。否则这些操作将使用next-key 锁定，以next-key 和
+gap locks 锁定找到的索引范围，并阻塞其它用户的新建插入。在Consistent Reads 中，与前一
+个隔离级相比这是一个重要的差别： 在这一级中，同一事务中所有的Consistent Reads 均读取第
+一次读取时已确定的快照。这个约定就意味着如果在同一事务中发出几个无格式(plain)的SELECTs
+，这些SELECT 的相互关系是一致的。
+在REPEATABLE READ 隔离级别下，不会出现Dirty Reads，也不会出现Non-Repeatable Reads，
+但是仍然存在Phantom Reads 的可能性。
+4. SERIALIZABLE
+SERIALIZABLE 隔离级别是标准事务隔离级别中的最高级别。设置为SERIALIZABLE 隔离级别之
+后，在事务中的任何时候所看到的数据都是事务启动时刻的状态，不论在这期间有没有其他事务已
+经修改了某些数据并提交。所以，SERIALIZABLE 事务隔离级别下，Phantom Reads 也不会出现。
+
+Innodb 在修改数据的时候同样也只是修改Buffer
+Pool 中的数据，并不是在一个事务提交的时候就将BufferPool 中被修改的数据同步到磁盘，而是通过另
+外一种支持事务的数据库系统常用的手段，将修改信息记录到相应的事务日志中。
+
+
+
+(187)
+Innodb 也早就考虑到了这种情况的存在，所以在系统中为我们设计了下面这个控制Innodb 事务
+日志刷新方式的参数：innodb_flush_log_at_trx_commit。这个参数的主要功能就是让我们告诉系统，
+在什么情况下该通知文件系统刷新缓存中的数据到磁盘文件，可设置为如下三种值
+◆ innodb_flush_log_at_trx_commit = 0，Innodb 中的Log Thread 没隔1 秒钟会将log buffer
+中的数据写入到文件，同时还会通知文件系统进行文件同步的flush 操作，保证数据确实已经
+写入到磁盘上面的物理文件。但是，每次事务的结束（commit 或者是rollback）并不会触发
+Log Thread 将log buffer 中的数据写入文件。所以，当设置为0 的时候，当MySQL Crash 和
+OS Crash 或者主机断电之后，最极端的情况是丢失1 秒时间的数据变更。
+◆ innodb_flush_log_at_trx_commit = 1，这也是Innodb 的默认设置。我们每次事务的结束都会
+触发Log Thread 将log buffer 中的数据写入文件并通知文件系统同步文件。这个设置是最安全
+的设置，能够保证不论是MySQL Crash 还是OS Crash 或者是主机断电都不会丢失任何已经提
+交的数据。
+◆ innodb_flush_log_at_trx_commit = 2，当我们设置为2 的时候，Log Thread 会在我们每次事
+务结束的时候将数据写入事务日志，但是这里的写入仅仅是调用了文件系统的文件写入操作。
+而我们的文件系统都是有缓存机制的，所以Log Thread 的这个写入并不能保证内容真的已经写
+入到物理磁盘上面完成持久化的动作。文件系统什么时候会将缓存中的这个数据同步到物理磁
+盘文件Log Thread 就完全不知道了。所以，当设置为2 的时候，MySQL Crash 并不会造成数据
+的丢失，但是OS Crash 或者是主机断电后可能丢失的数据量就完全控制在文件系统上了。各种
+文件系统对于自己缓存的刷新机制各不相同，各位读者朋友如果有兴趣可以自行参阅相关的手
+册。
+从上面的分析我们可以看出，当innodb_flush_log_at_trx_commit 设置为1 的时候是最安全的，但
+是由于所做的IO 同步操作也最多，所以性能也是三种设置中最差的一种。如果设置为0，则每秒有一次
+同步，性能相对高一些。如果设置为2，可能性能是三这种最好的。但是也可能是出现鼓掌后丢失数据最
+多的。到底该如何设置设置，就要根据具体的场景来分析了。一般来说，如果完全不能接受数据的丢
+失，那么我们肯定会通过牺牲一定的性能来换取数据的安全性，选择设置为1。而如果我们可以丢失很少
+量的数据(比如说1 秒之内)，那么我们可以设置为0。当然，如果大家觉得我们的OS 足够稳定，主机硬
+件设备，而且主机的供电系统也足够安全，我们也可以将innodb_flush_log_at_trx_commit 设置为2 让
+系统的整体性能尽可能的高。
+
+
+SHOW INNODB STATUS
+CREATE TABLE innodb_monitor(a int) ENGINE=INNODB;
+
+Scale（扩展) 
+
+
+Scale Out 就是指横向的扩展，向外扩展，也就是通过增加处理节点的方式来提高整体
+处理能力，说的更实际一点就是通过增加机器来增加整体的处理能力。
+Scale Up 则是指纵向的扩展，向上扩展，也就是通过增加当前处理节点的处理能力来
+提高整体的处理能力，说白了就是通过升级现有服务器的配置，如增加内存，增加CPU，增
+加存储系统的硬件配置，或者是直接更换为处理能力更强的服务器和更为高端的存储系统。
+通过比较两种Scale 方式，我们很容易看出各自的优缺点。
+◆ Scale Out 优点：
+1. 成本低，很容易通过价格低廉的PC Server 搭建出一个处理能力非常强大的
+计算集群；
+2. 不太容易遇到瓶颈，因为很容易通过添加主机来增加处理能力；
+3. 单个节点故障对系统整体影响较小；也存在缺点，更多的计算节点，大部分时
+候都是服务器主机，这自然会带来整个系统维护复杂性的提高，在某些方面肯定会
+增加维护成本，而且对应用系统的架构要求也会比Scale Up 更高，需要集群管理
+软件的配合。
+◆ Scale Out 缺点：
+1. 处理节点多，造成系统架构整体复杂度提高，应用程序复杂度提高；
+2. 集群维护难以程度更高，维护成本更大；
+◆ Scale Up 优点：
+1. 处理节点少，维护相对简单；
+2. 所有数据都集中在一起，应用系统架构简单，开发相对容易；
+◆ Scale Up 缺点
+1. 高端设备成本高，且竞争少，容易受到厂家限制；
+2. 受到硬件设备发展速度限制，单台主机的处理能力总是有极限的，容易遇到最
+终无法解决的性能瓶颈；
+3. 设备和数据集中，发生故障后的影响较大；
+实时更新数据总量可能不那么必要，定时。
+分页总量。粗略。
+
+就目前来说，主要存在的一些解决方案主要有以下三种：
+第一、进行Scale Out 设计的时候合理设计切分规则，尽可能保证事务所需数据在同
+一个MySQL Server 上，避免分布式事务。
+第二、大事务切分成多个小事务，数据库保证各个小事务的完整性，应用控制各个小事
+务之间的整体事务完整性。
+第三、结合上述两种解决方案，整合各自的优势，避免各自的弊端。...
+
+
+数据一致性：基本可用，柔性状态，基本一致和最终一致
+
+（200）
+事务相关性最小化原则
+数据一致性原则
+高可用及数据安全原则
+
+
+MySQL 复制的基本过程如下：
+1. Slave 上面的IO 线程连接上Master，并请求从指定日志文件的指定位置（或者从
+最开始的日志）之后的日志内容；
+2. Master 接收到来自Slave 的IO 线程的请求后，通过负责复制的IO 线程根据请
+求信息读取指定日志指定位置之后的日志信息，返回给Slave 端的IO 线程。返回信
+息中除了日志所包含的信息之外，还包括本次返回的信息在Master 端的Binary Log
+文件的名称以及在Binary Log 中的位置；
+3. Slave 的IO 线程接收到信息后，将接收到的日志内容依次写入到Slave 端的
+Relay Log 文件(mysql-relay-bin.xxxxxx)的最末端，并将读取到的Master 端的binlog
+的文件名和位置记录到master-info 文件中，以便在下一次读取的时候能够清楚的
+高速Master“我需要从某个bin-log 的哪个位置开始往后的日志内容，请发给我”
+4. Slave 的SQL 线程检测到Relay Log 中新增加了内容后，会马上解析该Log 文
+件中的内容成为在Master 端真实执行时候的那些可执行的Query 语句，并在自身执
+行这些Query。这样，实际上就是在Master 端和Slave 端执行了同样的Query，所
+以两端的数据是完全一样的。
+
+
+1. Row Level：Binary Log 中会记录成每一行数据被修改的形式，然后在Slave 端
+再对相同的数据进行修改。
+2. Statement Level:每一条会修改数据的Query 都会记录到Master 的Binary
+Log 中。Slave 在复制的时候SQL 线程会解析成和原来Master 端执行过的相同的Query
+来再次执行。
+
+
+（211） 13.4 Replication 搭建实现
+
+
+垂直切分的优点
+◆ 数据库的拆分简单明了，拆分规则明确；
+◆ 应用程序模块清晰明确，整合容易；
+◆ 数据维护方便易行，容易定位；
+垂直切分的缺点
+◆ 部分表关联无法在数据库级别完成，需要在程序中完成；
+◆ 对于访问极其频繁且数据量超大的表仍然存在性能平静，不一定能满足要求；
+◆ 事务处理相对更为复杂；
+◆ 切分达到一定程度之后，扩展性会遇到限制；
+◆ 过读切分可能会带来系统过渡复杂而难以维护。
+
+水平切分的优点
+◆ 表关联基本能够在数据库端全部完成；
+◆ 不会存在某些超大型数据量和高负载的表遇到瓶颈的问题；
+◆ 应用程序端整体架构改动相对较少；
+◆ 事务处理相对简单；
+◆ 只要切分规则能够定义好，基本上较难遇到扩展性限制；
+水平切分的缺点
+◆ 切分规则相对更为复杂，很难抽象出一个能够满足整个数据库的切分规则；
+◆ 后期数据的维护难度有所增加，人为手工定位数据更困难；
+◆ 应用系统各模块耦合度较高，可能会对后面数据的迁移拆分造成一定的困难。
+
+联合切分的优点
+◆ 可以充分利用垂直切分和水平切分各自的优势而避免各自的缺陷；
+◆ 让系统扩展性得到最大化提升；
+联合切分的缺点
+◆ 数据库系统架构比较复杂，维护难度更大；
+◆ 应用程序架构也相对更复杂；
+
+
+
+
+MySQL Proxy 实际上是在客户端请求与MySQL Server 之间建立了一个连接池。所有客
+户端请求都是发向MySQL Proxy，然后经由MySQL Proxy 进行相应的分析，判断出是读操
+作还是写操作，分发至对应的MySQL Server 上。
+
+◆ 引入分布式事务的问题；
+◆ 跨节点Join 的问题；
+◆ 跨节点合并排序分页问题；
+
+ps -ef | awk '{print $1}' | grep "mysql" | grep -v "grep" | wc -l
+SHOW /*!50000 GLOBAL */ VARIABLES
+SHOW /*!50000 GLOBAL */STATUS
+
+
+
+
+
+
+
+
+
+每页显示N个商品，每个商品评论数目单独搜和select goods_id，count(*) from comment where goods_id in (?) group by goods_id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+因为通过GRANT，REVOKE 或者DROP USER 命令所
+做的权限修改在修改系统表的同时也会更新内存结构中的权限信息。在MySQL5.0.2 或更高
+版本的时候，MySQL 还增加了CREATE USER 命令，以此创建无任何特别权限（仅拥有初始USAGE
+权限）的用户，通过CREATE USER 命令创建新了新用户之后，新用户的信息也会自动更新到
+内存结构中。所以，建议读者一般情况下尽量使用GRANT，REVOKE，CREATE USER 以及DROP
+USER 命令来进行用户和权限的变更操作，尽量减少直接修改grant tables 来实现用户和权
+限变更的操作。
+
+rename table tab1 to tab2
+show procedure status;
+declare cursor
