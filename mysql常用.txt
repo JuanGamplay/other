@@ -1,3 +1,6 @@
+https://tools.percona.com/wizard
+
+
 update mysql.user set password="yourpassword" where user="root"
 MySQL??INSERT DELAYED
 1.如何删除表中的重复记录？(这里指记录的每个字段都要相同) 
