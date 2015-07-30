@@ -4,6 +4,8 @@ service crond
 /var/spool/cron
 * * * * *  日和星期是或的关系
 
+//配置网卡时的，mac地址；ifconfig与etcho中要一致；rm －rf /etc/udev/rules.d/70-persistent-net.rules
+
 ./mongod --dbpath=/data/mongodb_data/ --logpath=/data/mongodb_log/mongodb.log --logappend&  
  telnet baidu.com 80
 lsb_release -a
