@@ -247,3 +247,30 @@ php 使用array_slice获取数组前几条数据
 			return $content;
 		}
 	}
+	
+	
+	20. 使用array_map快速处理数组
+
+比如说你想 trim 数组中的所有元素. 新手可能会:
+
+1   foreach($arr as $c =
+>
+ $v)  
+2   {  
+3       $arr[$c] = trim($v);  
+4   } 
+但使用 array_map 更简单:
+
+1 $arr = array_map('trim' , $arr); 
+这会为$arr数组的每个元素都申请调用trim. 另一个类似的函数是 array_walk. 请查阅文档学习更多技巧.
+
+21. 使用php filter验证数据
+
+你肯定曾使用过正则表达式验证 email , ip地址等. 是的,每个人都这么使用. 现在, 我们想做不同的尝试, 称为filter.
+
+php的filter扩展提供了简单的方式验证和检查输入.
+
+24. 小心处理大数组
+http://www.csdn.net/article/2012-04-10/2804343
+
+30. 在head中使用base标签
