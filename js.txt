@@ -1,0 +1,6 @@
+typeof null    "object"
+
+str = 'aaa'
+str.length    临时创建对象然后销毁
+
+var val = (1,2,3);//val=3 最右边
