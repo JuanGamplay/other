@@ -1,3 +1,4 @@
+yum install openssh-server
 yum install vixie-cron crontabs   
 service crond 
 /var/log/crons
