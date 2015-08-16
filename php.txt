@@ -285,3 +285,8 @@ define() ÔÚÖ´ÐÐÆÚ¶¨Òå³£Á¿£¬¶ø const ÔÚ±àÒëÆÚ¶¨Òå³£Á¿¡£ÕâÑù const ¾ÍÓÐÇáÎ¢µÄËÙ¶ÈÓ
 define() ½«³£Á¿·ÅÈëÈ«¾Ö×÷ÓÃÓò£¬ËäÈ»Äã¿ÉÒÔÔÚ³£Á¿ÃûÖÐ°üº¬ÃüÃû¿Õ¼ä¡£ ÕâÒâÎ¶×ÅÄã²»ÄÜÊ¹ÓÃ define() ¶¨ÒåÀà³£Á¿¡£
 define() ÔÊÐíÄãÔÚ³£Á¿ÃûºÍ³£Á¿ÖµÖÐÊ¹ÓÃ±í´ïÊ½£¬¶ø const Ôò¶¼²»ÔÊÐí¡£ ÕâÊ¹µÃ define() ¸ü¼ÓÁé»î¡£
 define() ¿ÉÒÔÔÚ if() ´úÂë¿éÖÐµ÷ÓÃ£¬µ« const ²»ÐÐ¡£
+
+
+10.Ò»¸öº¯ÊýµÄ²ÎÊý²»ÄÜÊÇ¶Ô±äÁ¿µÄÒýÓÃ£¬³ý·ÇÔÚphp.iniÖÐ°Ñ(15)ÉèÎªon.
+
+¡¡¡¡allow_call_time_pass_reference
