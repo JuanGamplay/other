@@ -103,7 +103,13 @@ my.cnf //slave-skip-errors=xxx
  
 官方的：mysql proxy  地址：http://dev.mysql.com/downloads/mysql-proxy/#downloads
 
+Amoeba for MySQL 是一款优秀的中间件软件，同样可以实现读写分离，负载均衡等功能，并且稳定性要大大超过MySQL-Proxy，建议大家用来替代MySQL-Proxy，甚至MySQL-Cluster。
 
 
+复制的体系结构有以下一些基本原则：
+(1)    每个slave只能有一个master；
+(2)    每个slave只能有一个唯一的服务器ID；
+(3)    每个master可以有很多slave；
+(4)    如果你设置log_slave_updates，slave可以是其它slave的master，从而扩散master的更新。
 额外
 http://blog.csdn.net/hguisu/article/details/7325124

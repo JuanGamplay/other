@@ -1,0 +1,53 @@
+安装提供代理服务器的软件包
+
+# tar zxvf mysql-proxy-0.8.3-linux-rhel5-x86-64bit.tar.gz
+
+# mv mysql-proxy-0.8.3-linux-rhel5-x86-64bit /usr/local/mysql-proxy  //此包为绿色免安装
+
+# yum -y install lua //此软件使用LUA脚本语言，因此需要安装好lua软件包
+
+代理服务启动时 会设置  负责写的数据库  负责读数据库服务器
+
+                        调用脚本来区分用户的访问类型
+
+                        指定自己监听的端口
+
+4.启动代理服务
+
+cd /usr/local/mproxy/bin/
+
+使用bin目录下的mysql-proxy脚本来启动代理服务
+
+# ./mysql-proxy -P 192.168.100.1:3306 -r  192.168.100.3:3306  -b 192.168.100.2:3306  -s /usr/local/mysql-proxy/share/doc/mysql-proxy/rw-splitting.lua &
+
+主要命令选项：
+
+-P：指定代理监听的IP地址、端口
+
+-r：指定读服务器的IP地址、端口
+
+-b：指定写服务器的IP地址、端口
+
+-s：指定lua脚本文件
+
+--keepalive：如果服务进程崩溃，尝试重启此进程
+
+5.查看代理进程是否运行
+
+# jobs
+
+# netstat -tulnp | grep :3306
+
+tcp        0      0 192.168.100.1:3306          0.0.0.0:*                  LISTEN      3314/mysql-proxy   
+
+//代理进程必须处于运行状态，客户端才能通过代理服务访问到后端的数据库服务器。
+
+6.查看读写分离脚本
+
+# vim /usr/local/mysql-proxy/share/doc/mysql-proxy/rw-splitting.lua
+
+……
+
+ 40                min_idle_connections = 4,        //默认并发请求大于4才实行读写分离
+
+ 41                max_idle_connections = 8, 

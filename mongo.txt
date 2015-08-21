@@ -1,0 +1,30 @@
+getLastError
+
+16M限制 GridFS。
+
+不支持多表查询
+
+弱一致性，速度快。
+文档结构存储，便捷获取数据。
+性能好，内置GridFS 支持大容量存储。
+第三方支持多。和其他nosql比。
+
+缺点
+不支持事务。
+占用空间大。预分频空间。key-value bson存储。
+维护工具没有mysql成熟。
+
+
+$ ./mongod
+> use admin
+> db.shutdownServer()
+use admin
+db.addUser('tao','123456')
+
+
+http://www.cnblogs.com/dennisit/archive/2013/02/18/2916159.html
+http://blog.nosqlfan.com/html/544.html
+
+http://blog.nosqlfan.com/html/3537.html
+http://blog.nosqlfan.com/tags/sharding
+http://database.51cto.com/art/201106/268661.htm
