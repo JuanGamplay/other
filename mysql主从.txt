@@ -7,7 +7,7 @@ unlock tables;
 		mysql -uroot -proot <back.sql
 
 3主服务器开启。
-grant replication slave on *.* to 'root'@'%' identified by '123456';
+grant replication slave  on *.* to 'root'@'%' identified by '123456';//REPLICATION CLIENT
 show master status; 获取偏移量
 
 4从服务器复制
@@ -39,6 +39,9 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '123456' WITH GRANT OPTI
 show variables like "%ser%";  查看server-id
 show processlist\G 查看线程
 
+重置数据库
+remove -rf data/*
+mysql_install_db --user=mysql --basedir=/usr/local/mysql/ --datadir=/mydata/data/        //初始化mysql
 
 错误情况
 3:45:55 [ERROR] Slave I/O: error connecting to master 'root@172.19.5.233:3306' - retry-time: 60  retries: 86400, Error_code: 1045
@@ -63,6 +66,34 @@ auto-increment-offset=1
 主2： 
 auto-increment-increment=2 
 auto-increment-offset=2
+
+
+chkconfig mysqld off
+
+# netstat -tulnp | grep :3306
+
+复制出错
+MySQL从库从主库上复制binlog文件内容到本地执行。在binlog上命令以event的形式存在，并非一个命令对应一个event。以一个insert语句为例（引擎InnoDB、binglog_format=statement)， 在binlog中实际上有三个event，分别为begin\insert\commit 。 命令类型都是Query_log_event.
+"SHOW BINLOG EVENTS in  'mysql-bin.000014' from 92562567 limit 100;"
+mysql>slave stop;
+mysql> set GLOBAL SQL_SLAVE_SKIP_COUNTER=N;
+mysql> slave start;
+跳过N个event
+my.cnf //slave-skip-errors=xxx
+
+上面举例中都特别说明了在innodb引擎和statement模式下。其他情况区别如下：
+   1、若引擎为myisam（等不支持事务的引擎），且在statement下，则binlog中不会有begin和commit，每个命令都是一个event；
+   2、row模式的binlog里，一个insert语句实际上是两个event（Table_map_event和 Row_log_event), 计算时应与statement不同。
+  3、在row模式下，不论引擎是否支持事务，一个insert语句都会加上BEGIN和commit，也即变成4个event。
+  4、基于InnoDB引擎表的insert/delete/update操作都有显式样的BEGIN /COMMIT.
+ 
+  上面举的这个例子中，若为row模式，则要直接执行X4语句需要设置的N为 5～10均可。
+ 
+   小结：
+   1、set global sql_slave_skip_counter=N中的N是指跳过N个event
+   2、最好记的是N被设置为1时，效果跳过下一个事务。
+   3、跳过第N个event后，位置若刚好落在一个事务内部，则会跳过这整个事务
+   4、一个insert/update/delete不一定只对应一个event，由引擎和日志格式决定
 
  简单的读写分离实现
  
