@@ -1,1 +1,4 @@
 http://blog.csdn.net/u012519333/article/details/23589993
+
+Nginx/HAProxy+Keepalived
+LVS+Keepliaved

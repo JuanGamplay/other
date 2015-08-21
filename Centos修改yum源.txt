@@ -1,3 +1,5 @@
+http://pkgs.repoforge.org/
+
 CentOS更改yum源与更新系统
 
 [1] 首先备份/etc/yum.repos.d/CentOS-Base.repo
@@ -21,4 +23,3 @@ mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 
 /var/spool/mail/root
 
-有目标，做对事。跑步要加油。体能练上去，也许能半马？精神状态，外表。
