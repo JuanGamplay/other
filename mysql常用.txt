@@ -2,6 +2,8 @@ https://tools.percona.com/wizard
 
 http://segmentfault.com/a/1190000003493173?utm_source=Weibo&utm_medium=shareLink&utm_campaign=socialShare    btree和hash比较
 
+   OPTIMIZE TABLE ‘table'  清理表空间 
+show variables like 'character_set_server'; 系统字符
 update mysql.user set password="yourpassword" where user="root"
 MySQL??INSERT DELAYED
 1.如何删除表中的重复记录？(这里指记录的每个字段都要相同) 
