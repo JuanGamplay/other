@@ -1,0 +1,2 @@
+get_defined_constants();获取定义常量
+get_included_files(); 已包含方法

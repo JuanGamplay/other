@@ -54,6 +54,7 @@ export LANG=zh_CN.UTF-8
  mysql °²×°  yum install mysql-server  mysql-devel  mysql
 mysqladmin -u root password 123456
 GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' IDENTIFIED BY 'mypassword' WITH GRANT OPTION;
+update user set host='%' where user='root' and host='localhost';
 
 
 
