@@ -1,3 +1,8 @@
+top   free  查看磁盘内存
+vi /proc/XXX
+
+
+
 yum install openssh-server
 yum install vixie-cron crontabs   
 service crond 
@@ -36,7 +41,8 @@ setenforce 0
 -au    显示较详细的资讯
 
 -aux    显示所有包含其他使用者的行程
-
+ps -aux   
+netstat -apn | grep
 
 
 rpm -qa|grep -i mysql ＃[搜索指定rpm包是否安装]--all搜索*httpd*
