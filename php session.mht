@@ -1,0 +1,487 @@
+From: WizMime<support@wiz.cn>
+Subject: =?gb2312?B?cGhwIHNlc3Npb24=?=
+Date: Date: Fri, 17 Feb 2017 10:51:43 +0800
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="multipart/alternative";
+	boundary="----=_Next_Part_0018595263.726"
+
+This is a multi-part message in MIME format.
+
+------=_Next_Part_0018595263.726
+Content-Type: multipart/alternative;
+	boundary="----=_Next_Part_0006198421.771"
+
+
+------=_Next_Part_0006198421.771
+Content-Type: text/plain;
+	charset="gb2312"
+Content-Transfer-Encoding: quoted-printable
+
+This is a multi-part message in MIME format.
+
+------=_Next_Part_0006198421.771
+Content-Type: text/html;
+	charset="gb2312"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0A<html><head>=0D=0A<meta http-equiv=3D"Content-T=
+ype" content=3D"text/html; charset=3Dgb2312">=0A<meta http-equiv=3D=
+"X-UA-Compatible" content=3D"IE=3D7,8,9,10,11" />=0A=0A<!--defaul=
+tCSS-->=0A<title>php session</title>=0A=0A=0A=0A=0A=0A<style type=
+=3D"text/css" id=3D"wiz_todo_style_id" wiz_link_version=3D"01.00.=
+09">.wiz-todo, .wiz-todo-img {width: 16px; height: 16px; cursor:=20=
+default; padding: 0 10px 0 2px; vertical-align: -10%;-webkit-user=
+-select: none;} .wiz-todo-label { display: inline-block; padding-=
+top: 7px; padding-bottom: 6px; line-height: 1.5;} .wiz-todo-label=
+-checked {  color: #666;} .wiz-todo-label-unchecked {text-decorat=
+ion: initial;} .wiz-todo-completed-info {padding-left: 44px; disp=
+lay: inline-block; } .wiz-todo-avatar { width:20px; height: 20px;=
+ vertical-align: -20%; margin-right:10px; border-radius: 2px;} .w=
+iz-todo-account, .wiz-todo-dt { color: #666; }</style>=0A=0A=0A=0A=
+<style type=3D"text/css" id=3D"wiz_custom_css">=0Abody=0A{=0A   =20=
+font-family: Microsoft YaHei UI,"Microsoft YaHei", Georgia,Helvet=
+ica,Arial,sans-serif,=CB=CE=CC=E5, PMingLiU,serif;=0A    font-siz=
+e: 10.5pt;=0A    line-height: 1.5;=0A}=0Ahtml, body=0A{=0A    =0A=
+    =0A}=0Ah1 {=0A    font-size:1.5em;=0A    font-weight:bold;=0A=
+}=0Ah2 {=0A    font-size:1.4em;=0A    font-weight:bold;=0A}=0Ah3=20=
+{=0A    font-size:1.3em;=0A    font-weight:bold;=0A}=0Ah4 {=0A  =20=
+ font-size:1.2em;=0A    font-weight:bold;=0A}=0Ah5 {=0A    font-s=
+ize:1.1em;=0A    font-weight:bold;=0A}=0Ah6 {=0A    font-size:1.0=
+em;=0A    font-weight:bold;=0A}=0Aimg {=0A    border:0;=0A    max=
+-width: 100%;=0A    height: auto !important;=0A}=0Ablockquote {=0A=
+    margin-top:0px;=0A    margin-bottom:0px;=0A}=0Atable {=0A   =20=
+border-collapse:collapse;=0A    border:1px solid #bbbbbb;=0A}=0At=
+d {=0A    border-collapse:collapse;=0A    border:1px solid #bbbbb=
+b;=0A}=0A</style>=0A=0A</head>=0A=0A<body style=3D"" ><span style=
+=3D"color: rgb(51, 51, 51); font-family: 'Fira Sans', 'Source San=
+s Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-heigh=
+t: 24px; widows: 1; background-color: rgb(255, 255, 255);">=D4=DA=
+ Linux =C6=BD=CC=A8=C9=CF=A3=AC=B6=D4=D3=DA=BB=E1=BB=B0=CA=FD=BE=DD=
+=B1=A3=B4=E6=B5=C4=B9=A4=D7=F7=B6=F8=D1=D4=A3=ACreiserfs =CE=C4=BC=
+=FE=CF=B5=CD=B3=BB=E1=B1=C8 ext2fs =CE=C4=BC=FE=CF=B5=CD=B3=C4=DC=
+=B9=BB=CC=E1=B9=A9=B8=FC=BA=C3=B5=C4=D0=D4=C4=DC=A1=A3</span><div=
+><span style=3D"color: rgb(51, 51, 51); font-family: 'Fira Sans',=
+ 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px=
+; line-height: 24px; widows: 1; background-color: rgb(255, 255, 2=
+55);"><br></span></div><div><span class=3D"default" style=3D"colo=
+r: rgb(51, 102, 153); font-family: 'Fira Mono', 'Source Code Pro'=
+, monospace; font-size: 14px; line-height: 24px; widows: 1; backg=
+round-color: rgb(255, 255, 255);">ini_set</span><span class=3D"ke=
+yword" style=3D"color: rgb(102, 153, 51); font-family: 'Fira Mono=
+', 'Source Code Pro', monospace; font-size: 14px; line-height: 24=
+px; widows: 1; background-color: rgb(255, 255, 255);">(</span><sp=
+an class=3D"string" style=3D"color: rgb(204, 51, 51); font-family=
+: 'Fira Mono', 'Source Code Pro', monospace; font-size: 14px; lin=
+e-height: 24px; widows: 1; background-color: rgb(255, 255, 255);"=
+>'session.save_path'</span><span class=3D"keyword" style=3D"color=
+: rgb(102, 153, 51); font-family: 'Fira Mono', 'Source Code Pro',=
+ monospace; font-size: 14px; line-height: 24px; widows: 1; backgr=
+ound-color: rgb(255, 255, 255);">,</span><span class=3D"default"=20=
+style=3D"color: rgb(51, 102, 153); font-family: 'Fira Mono', 'Sou=
+rce Code Pro', monospace; font-size: 14px; line-height: 24px; wid=
+ows: 1; background-color: rgb(255, 255, 255);">realpath</span><sp=
+an class=3D"keyword" style=3D"color: rgb(102, 153, 51); font-fami=
+ly: 'Fira Mono', 'Source Code Pro', monospace; font-size: 14px; l=
+ine-height: 24px; widows: 1; background-color: rgb(255, 255, 255)=
+;">(</span><span class=3D"default" style=3D"color: rgb(51, 102, 1=
+53); font-family: 'Fira Mono', 'Source Code Pro', monospace; font=
+-size: 14px; line-height: 24px; widows: 1; background-color: rgb(=
+255, 255, 255);">dirname</span><span class=3D"keyword" style=3D"c=
+olor: rgb(102, 153, 51); font-family: 'Fira Mono', 'Source Code P=
+ro', monospace; font-size: 14px; line-height: 24px; widows: 1; ba=
+ckground-color: rgb(255, 255, 255);">(</span><span class=3D"defau=
+lt" style=3D"color: rgb(51, 102, 153); font-family: 'Fira Mono',=20=
+'Source Code Pro', monospace; font-size: 14px; line-height: 24px;=
+ widows: 1; background-color: rgb(255, 255, 255);">$_SERVER</span=
+><span class=3D"keyword" style=3D"color: rgb(102, 153, 51); font-=
+family: 'Fira Mono', 'Source Code Pro', monospace; font-size: 14p=
+x; line-height: 24px; widows: 1; background-color: rgb(255, 255,=20=
+255);">[</span><span class=3D"string" style=3D"color: rgb(204, 51=
+, 51); font-family: 'Fira Mono', 'Source Code Pro', monospace; fo=
+nt-size: 14px; line-height: 24px; widows: 1; background-color: rg=
+b(255, 255, 255);">'DOCUMENT_ROOT'</span><span class=3D"keyword"=20=
+style=3D"color: rgb(102, 153, 51); font-family: 'Fira Mono', 'Sou=
+rce Code Pro', monospace; font-size: 14px; line-height: 24px; wid=
+ows: 1; background-color: rgb(255, 255, 255);">]) .&nbsp;</span><=
+span class=3D"string" style=3D"color: rgb(204, 51, 51); font-fami=
+ly: 'Fira Mono', 'Source Code Pro', monospace; font-size: 14px; l=
+ine-height: 24px; widows: 1; background-color: rgb(255, 255, 255)=
+;">'/../session'</span><span class=3D"keyword" style=3D"color: rg=
+b(102, 153, 51); font-family: 'Fira Mono', 'Source Code Pro', mon=
+ospace; font-size: 14px; line-height: 24px; widows: 1; background=
+-color: rgb(255, 255, 255);">));</span><span style=3D"color: rgb(=
+51, 51, 51); font-family: 'Fira Sans', 'Source Sans Pro', Helveti=
+ca, Arial, sans-serif; font-size: 16px; line-height: 24px; widows=
+: 1; background-color: rgb(255, 255, 255);"><br></span></div><div=
+ style=3D"widows: 1;"><font color=3D"#669933" face=3D"Fira Mono,=20=
+Source Code Pro, monospace"><span style=3D"line-height: 23.996711=
+73095703px;">=BB=F2=D5=DF</span></font></div><div style=3D"widows=
+: 1;"><span class=3D"default" style=3D"color: rgb(51, 102, 153);=20=
+font-family: 'Fira Mono', 'Source Code Pro', monospace; font-size=
+: 14px; line-height: 24px; background-color: rgb(255, 255, 255);"=
+>session_save_path</span><span class=3D"keyword" style=3D"color:=20=
+rgb(102, 153, 51); font-family: 'Fira Mono', 'Source Code Pro', m=
+onospace; font-size: 14px; line-height: 24px; background-color: r=
+gb(255, 255, 255);">(</span><span class=3D"string" style=3D"color=
+: rgb(204, 51, 51); font-family: 'Fira Mono', 'Source Code Pro',=20=
+monospace; font-size: 14px; line-height: 24px; background-color:=20=
+rgb(255, 255, 255);">'/home/example.com/sessions'</span><span cla=
+ss=3D"keyword" style=3D"color: rgb(102, 153, 51); font-family: 'F=
+ira Mono', 'Source Code Pro', monospace; font-size: 14px; line-he=
+ight: 24px; background-color: rgb(255, 255, 255);">);</span><font=
+ color=3D"#669933" face=3D"Fira Mono, Source Code Pro, monospace"=
+><span style=3D"line-height: 23.99671173095703px;"><br></span></f=
+ont></div><div style=3D"widows: 1;"><span class=3D"keyword" style=
+=3D"color: rgb(102, 153, 51); font-family: 'Fira Mono', 'Source C=
+ode Pro', monospace; font-size: 14px; line-height: 24px; backgrou=
+nd-color: rgb(255, 255, 255);"><br></span></div><div style=3D"wid=
+ows: 1;"><span class=3D"keyword" style=3D"color: rgb(102, 153, 51=
+); font-family: 'Fira Mono', 'Source Code Pro', monospace; font-s=
+ize: 14px; line-height: 24px; background-color: rgb(255, 255, 255=
+);"><br></span></div><div style=3D"widows: 1;"><span class=3D"key=
+word" style=3D"color: rgb(102, 153, 51); font-family: 'Fira Mono'=
+, 'Source Code Pro', monospace; font-size: 14px; line-height: 24p=
+x; background-color: rgb(255, 255, 255);"><p class=3D"para" style=
+=3D"margin: 0px; color: rgb(51, 51, 51); font-family: 'Fira Sans'=
+, 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16p=
+x; line-height: 24px;">=D4=DA=BD=C5=B1=BE=D6=B4=D0=D0=CD=EA=B1=CF=
+=D6=AE=BA=F3=A3=ACPHP =C4=DA=B2=BF=BB=E1=C7=E5=B3=FD=B6=D4=CF=F3=A3=
+=AC =CB=F9=D2=D4=D3=D0=BF=C9=C4=DC=B2=BB=B5=F7=D3=C3&nbsp;<code c=
+lass=3D"parameter" style=3D"font-weight: 700; font-size: 1rem; li=
+ne-height: 1.375rem; font-family: 'Fira Mono', 'Source Code Pro',=
+ monospace; word-wrap: break-word; color: rgb(51, 102, 153); curs=
+or: pointer;">write</code>&nbsp;=BA=CD&nbsp;<code class=3D"parame=
+ter" style=3D"font-weight: 700; font-size: 1rem; line-height: 1.3=
+75rem; font-family: 'Fira Mono', 'Source Code Pro', monospace; wo=
+rd-wrap: break-word; color: rgb(51, 102, 153); cursor: pointer;">=
+close</code>&nbsp;=BB=D8=B5=F7=BA=AF=CA=FD=A1=A3 =D5=E2=D1=F9=BF=C9=
+=C4=DC=BB=E1=D2=FD=B7=A2=B7=C7=D4=A4=C6=DA=B5=C4=D0=D0=CE=AA=A3=AC=
+=CB=F9=D2=D4=B5=B1=CA=B9=D3=C3=B6=D4=CF=F3=D7=F7=CE=AA=BB=E1=BB=B0=
+=B1=A3=B4=E6=B9=DC=C0=ED=C6=F7=CA=B1=A3=AC =D0=E8=D2=AA=CD=A8=B9=FD=
+=D7=A2=B2=E1 shutdown =BB=D8=B5=F7=BA=AF=CA=FD=C0=B4=B9=E6=B1=DC=B7=
+=E7=CF=D5=A1=A3 =CD=A8=B3=A3=A3=AC=C4=E3=BF=C9=D2=D4=CD=A8=B9=FD=B5=
+=F7=D3=C3&nbsp;<span class=3D"function"><a href=3D"http://php.net=
+/manual/zh/function.register-shutdown-function.php" class=3D"func=
+tion" style=3D"border-bottom-width: 1px; border-bottom-style: sol=
+id; text-decoration: none; color: rgb(51, 102, 153);">register_sh=
+utdown_function()</a></span>=BA=AF=CA=FD =C0=B4=D7=A2=B2=E1&nbsp;=
+<code class=3D"parameter" style=3D"font-weight: 700; font-size: 1=
+rem; line-height: 1.375rem; font-family: 'Fira Mono', 'Source Cod=
+e Pro', monospace; word-wrap: break-word; color: rgb(51, 102, 153=
+); cursor: pointer;">'session_write_close'</code>&nbsp;=BB=D8=B5=F7=
+=BA=AF=CA=FD=A1=A3</p><p class=3D"para" style=3D"margin: 0px; col=
+or: rgb(51, 51, 51); font-family: 'Fira Sans', 'Source Sans Pro',=
+ Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px=
+;"><span style=3D"font-family: 'Fira Mono', 'Source Code Pro', mo=
+nospace; font-size: 14px; line-height: 24px; color: rgb(0, 0, 187=
+);">register_shutdown_function</span><span style=3D"font-family:=20=
+'Fira Mono', 'Source Code Pro', monospace; font-size: 14px; line-=
+height: 24px; color: rgb(0, 119, 0);">(</span><span style=3D"font=
+-family: 'Fira Mono', 'Source Code Pro', monospace; font-size: 14=
+px; line-height: 24px; color: rgb(221, 0, 0);">'session_write_clo=
+se'</span><span style=3D"font-family: 'Fira Mono', 'Source Code P=
+ro', monospace; font-size: 14px; line-height: 24px; color: rgb(0,=
+ 119, 0);">);</span><br></p><p class=3D"para" style=3D"margin: 1.=
+5rem 0px 0px; color: rgb(51, 51, 51); font-family: 'Fira Sans', '=
+Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px;=20=
+line-height: 24px;">=D4=DA PHP 5.4.0 =D6=D0=A3=AC=BF=C9=D2=D4=B5=F7=
+=D3=C3&nbsp;<span class=3D"function"><a href=3D"http://php.net/ma=
+nual/zh/function.session-register-shutdown.php" class=3D"function=
+" style=3D"border-bottom-width: 1px; border-bottom-style: solid;=20=
+text-decoration: none; color: rgb(51, 102, 153);">session_registe=
+r_shutdown()</a></span>&nbsp;=BA=AF=CA=FD=C0=B4=D7=A2=B2=E1 shutd=
+own =BB=D8=B5=F7=BA=AF=CA=FD=A1=A3 =C8=E7=B9=FB=C4=E3=CA=B9=D3=C3=
+&nbsp;<span class=3D"function"><strong style=3D"text-rendering: o=
+ptimizelegibility; font-weight: 500;">session_set_save_handler()<=
+/strong></span>&nbsp;=B5=C4 OOP =D4=AD=D0=CD=A3=AC =C4=C7=C3=B4=BD=
+=F6=D0=E8=C9=E8=D6=C3 =A1=B0register shutdown=A1=B1 =CE=AA&nbsp;<=
+strong style=3D"text-rendering: optimizelegibility; font-weight:=20=
+500;"><code style=3D"font-weight: 700; font-size: 0.875rem; line-=
+height: 1.375rem; font-family: 'Fira Mono', 'Source Code Pro', mo=
+nospace; word-wrap: break-word;">TRUE</code></strong>&nbsp;=BC=B4=
+=BF=C9=A1=A3</p></span><br><div style=3D"color:gray"><small>=C0=B4=
+=D4=B4=A3=BA&nbsp;&lt;<a href=3D"http://php.net/manual/zh/functio=
+n.session-set-save-handler.php">http://php.net/manual/zh/function=
+.session-set-save-handler.php</a><small>&gt;</small></small></div=
+><div style=3D"color:gray"><small><small><br></small></small></di=
+v><div style=3D"color:gray"><small><small><br></small></small></d=
+iv><div style=3D"color:gray"><small><small><br></small></small></=
+div><div style=3D"color:gray"><small><small><span style=3D"color:=
+ rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-heigh=
+t: 26px; background-color: rgb(255, 255, 255);">file_get_contents=
+=CA=C7=D7=E8=C8=FB=B5=C4I/O=B7=BD=CA=BD=A3=AC=C7=D2=C4=AC=C8=CF=C3=
+=BB=D3=D0=C9=E8=D6=C3=B3=AC=CA=B1=A3=AC=D2=F2=B6=F8=C8=E7=B9=FB=CB=
+=D1=CB=F7=BD=D3=BF=DA=D4=DA=B3=A4=CA=B1=BC=E4=C3=BB=D3=D0=B7=B5=BB=
+=D8=CA=FD=BE=DD=B5=C4=C7=E9=BF=F6=CF=C2=A3=AC=BB=E1=D2=BB=D6=B1=D5=
+=BC=D3=C3=CF=B5=CD=B3=B5=C4=D7=CA=D4=B4=A3=AC=B4=D3=B6=F8=B5=BC=D6=
+=C2=C1=CBnginx=B5=C4502 bad gateway</span><br></small></small></d=
+iv><div style=3D"color:gray"><small><small><span style=3D"color:=20=
+rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height=
+: 26px; background-color: rgb(255, 255, 255);"><br></span></small=
+></small></div><div style=3D"color:gray"><small><small><span clas=
+s=3D"function" style=3D"color: rgb(51, 51, 51); font-family: 'Fir=
+a Sans', 'Source Sans Pro', Helvetica, Arial, sans-serif; font-si=
+ze: 16px; line-height: 24px; background-color: rgb(242, 242, 242)=
+;"><strong style=3D"text-rendering: optimizelegibility; font-weig=
+ht: 500;">mysql_fetch_array()</strong></span><span style=3D"color=
+: rgb(51, 51, 51); font-family: 'Fira Sans', 'Source Sans Pro', H=
+elvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=20=
+background-color: rgb(242, 242, 242);">&nbsp;=CA=C7&nbsp;</span><=
+span class=3D"function" style=3D"color: rgb(51, 51, 51); font-fam=
+ily: 'Fira Sans', 'Source Sans Pro', Helvetica, Arial, sans-serif=
+; font-size: 16px; line-height: 24px; background-color: rgb(242,=20=
+242, 242);"><a href=3D"http://php.net/manual/zh/function.mysql-fe=
+tch-row.php" class=3D"function" style=3D"border-bottom-width: 1px=
+; border-bottom-style: solid; text-decoration: none; color: rgb(5=
+1, 102, 153);">mysql_fetch_row()</a></span><span style=3D"color:=20=
+rgb(51, 51, 51); font-family: 'Fira Sans', 'Source Sans Pro', Hel=
+vetica, Arial, sans-serif; font-size: 16px; line-height: 24px; ba=
+ckground-color: rgb(242, 242, 242);">&nbsp;=B5=C4=C0=A9=D5=B9=B0=E6=
+=B1=BE=A1=A3</span><span style=3D"color: rgb(51, 51, 51); font-fa=
+mily: Arial; font-size: 14px; line-height: 26px; background-color=
+: rgb(255, 255, 255);"><br></span></small></small></div><div styl=
+e=3D"color:gray"><small><small><span style=3D"color: rgb(51, 51,=20=
+51); font-family: 'Fira Sans', 'Source Sans Pro', Helvetica, Aria=
+l, sans-serif; font-size: 16px; line-height: 24px; background-col=
+or: rgb(242, 242, 242);">=C8=E7=B9=FB=BD=E1=B9=FB=D6=D0=B5=C4=C1=BD=
+=B8=F6=BB=F2=D2=D4=C9=CF=B5=C4=C1=D0=BE=DF=D3=D0=CF=E0=CD=AC=D7=D6=
+=B6=CE=C3=FB=A3=AC=D7=EE=BA=F3=D2=BB=C1=D0=BD=AB=D3=C5=CF=C8=A1=A3=
+=D2=AA=B7=C3=CE=CA=CD=AC=C3=FB=B5=C4=C6=E4=CB=FC=C1=D0=A3=AC=B1=D8=
+=D0=EB=D3=C3=B8=C3=C1=D0=B5=C4=CA=FD=D7=D6=CB=F7=D2=FD=BB=F2=B8=F8=
+=B8=C3=C1=D0=C6=F0=B8=F6=B1=F0=C3=FB=A1=A3=B6=D4=D3=D0=B1=F0=C3=FB=
+=B5=C4=C1=D0=A3=AC=B2=BB=C4=DC=D4=D9=D3=C3=D4=AD=C0=B4=B5=C4=C1=D0=
+=C3=FB=B7=C3=CE=CA=C6=E4=C4=DA=C8=DD=A3=A8=B1=BE=C0=FD=D6=D0=B5=C4=
+&nbsp;</span><em style=3D"text-rendering: optimizelegibility; col=
+or: rgb(51, 51, 51); font-family: 'Fira Sans', 'Source Sans Pro',=
+ Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px=
+; background-color: rgb(242, 242, 242);">'field'</em><span style=3D=
+"color: rgb(51, 51, 51); font-family: 'Fira Sans', 'Source Sans P=
+ro', Helvetica, Arial, sans-serif; font-size: 16px; line-height:=20=
+24px; background-color: rgb(242, 242, 242);">=A3=A9=A1=A3</span><=
+/small></small></div><div style=3D"color:gray"><small><small><p c=
+lass=3D"para" style=3D"margin: 0px 0px 1.5rem; color: rgb(51, 51,=
+ 51); font-family: 'Fira Sans', 'Source Sans Pro', Helvetica, Ari=
+al, sans-serif; font-size: 16px; line-height: 24px; background-co=
+lor: rgb(242, 242, 242);">=C4=AC=C8=CF=D6=B5=CA=C7 MYSQL_BOTH=A3=AC=
+=BD=AB=B5=C3=B5=BD=D2=BB=B8=F6=CD=AC=CA=B1=B0=FC=BA=AC=B9=D8=C1=AA=
+=BA=CD=CA=FD=D7=D6=CB=F7=D2=FD=B5=C4=CA=FD=D7=E9=A1=A3=D3=C3 MYSQ=
+L_ASSOC =D6=BB=B5=C3=B5=BD=B9=D8=C1=AA=CB=F7=D2=FD=A3=A8=C8=E7=CD=
+=AC&nbsp;<span class=3D"function"><a href=3D"http://php.net/manua=
+l/zh/function.mysql-fetch-assoc.php" class=3D"function" style=3D"=
+border-bottom-width: 1px; border-bottom-style: solid; text-decora=
+tion: none; color: rgb(51, 102, 153);">mysql_fetch_assoc()</a></s=
+pan>&nbsp;=C4=C7=D1=F9=A3=A9=A3=AC=D3=C3 MYSQL_NUM =D6=BB=B5=C3=B5=
+=BD=CA=FD=D7=D6=CB=F7=D2=FD=A3=A8=C8=E7=CD=AC&nbsp;<span class=3D=
+"function"><a href=3D"http://php.net/manual/zh/function.mysql-fet=
+ch-row.php" class=3D"function" style=3D"border-bottom-width: 1px;=
+ border-bottom-style: solid; text-decoration: none; color: rgb(51=
+, 102, 153);">mysql_fetch_row()</a></span>&nbsp;=C4=C7=D1=F9=A3=A9=
+=A1=A3</p></small></small></div><small><small>&nbsp;</small></sma=
+ll><span style=3D"background-color: rgb(255, 255, 255); color: rg=
+b(51, 51, 51); font-family: Georgia, 'Times New Roman', 'Bitstrea=
+m Charter', Times, serif; font-size: 12px; letter-spacing: 1px; l=
+ine-height: 20.3999996185303px; text-indent: 24px;">=D4=DAPHP=D6=D0=
+=A3=AC=D3=D0=D5=E2=D1=F9=B5=C4=BA=AF=CA=FD ip2long() =BA=CD long2=
+ip()=A1=A3 &nbsp;ip=B1=A3=B4=E6</span></div><div style=3D"widows:=
+ 1;"><span style=3D"background-color: rgb(255, 255, 255); color:=20=
+rgb(51, 51, 51); font-family: Georgia, 'Times New Roman', 'Bitstr=
+eam Charter', Times, serif; font-size: 12px; letter-spacing: 1px;=
+ line-height: 20.3999996185303px; text-indent: 24px;"><br></span>=
+</div><div style=3D"widows: 1;"><span style=3D"background-color:=20=
+rgb(255, 255, 255); color: rgb(51, 51, 51); font-family: Georgia,=
+ 'Times New Roman', 'Bitstream Charter', Times, serif; font-size:=
+ 12px; letter-spacing: 1px; line-height: 20.3999996185303px; text=
+-indent: 24px;"><br></span></div><div style=3D"widows: 1;"><h4 st=
+yle=3D"margin: 1.5em 0px 0.5em; text-indent: 24px; font-size: 14p=
+x; line-height: 21px; color: rgb(51, 51, 51); font-family: Georgi=
+a, 'Times New Roman', 'Bitstream Charter', Times, serif; backgrou=
+nd-color: rgb(255, 255, 255);">=B2=F0=B7=D6=B4=F3=B5=C4 DELETE =BB=
+=F2 INSERT =D3=EF=BE=E4</h4><div><div>while (1) {</div><div>&nbsp=
+; &nbsp; //=C3=BF=B4=CE=D6=BB=D7=F61000=CC=F5</div><div><span cla=
+ss=3D"Apple-tab-span" style=3D"white-space:pre">	</span>mysql_que=
+ry("DELETE FROM logs WHERE log_date &lt;=3D '2009-11-01' LIMIT 10=
+00");</div><div><span class=3D"Apple-tab-span" style=3D"white-spa=
+ce:pre">	</span>if (mysql_affected_rows() =3D=3D 0) {</div><div><=
+span class=3D"Apple-tab-span" style=3D"white-space:pre">		</span>=
+// =C3=BB=B5=C3=BF=C9=C9=BE=C1=CB=A3=AC=CD=CB=B3=F6=A3=A1</div><d=
+iv><span class=3D"Apple-tab-span" style=3D"white-space:pre">		</s=
+pan>break;</div><div><span class=3D"Apple-tab-span" style=3D"whit=
+e-space:pre">	</span>}</div><div><span class=3D"Apple-tab-span" s=
+tyle=3D"white-space:pre">	</span>// =C3=BF=B4=CE=B6=BC=D2=AA=D0=DD=
+=CF=A2=D2=BB=BB=E1=B6=F9</div><div><span class=3D"Apple-tab-span"=
+ style=3D"white-space:pre">	</span>usleep(50000);</div><div>}</di=
+v></div><div><br></div><div><p style=3D"text-indent: 2em; margin:=
+ 1.2em 0em 1em; line-height: 20.3999996185303px; letter-spacing:=20=
+1px; color: rgb(51, 51, 51); font-family: Georgia, 'Times New Rom=
+an', 'Bitstream Charter', Times, serif; font-size: 12px; backgrou=
+nd-color: rgb(255, 255, 255);">Prepared Statements =BF=C9=D2=D4=BC=
+=EC=B2=E9=D2=BB=D0=A9=C4=E3=B0=F3=B6=A8=BA=C3=B5=C4=B1=E4=C1=BF=A3=
+=AC=D5=E2=D1=F9=BF=C9=D2=D4=B1=A3=BB=A4=C4=E3=B5=C4=B3=CC=D0=F2=B2=
+=BB=BB=E1=CA=DC=B5=BD=A1=B0SQL=D7=A2=C8=EB=CA=BD=A1=B1=B9=A5=BB=F7=
+=A1=A3=B5=B1=C8=BB=A3=AC=C4=E3=D2=B2=BF=C9=D2=D4=CA=D6=B6=AF=B5=D8=
+=BC=EC=B2=E9=C4=E3=B5=C4=D5=E2=D0=A9=B1=E4=C1=BF=A3=AC=C8=BB=B6=F8=
+=A3=AC=CA=D6=B6=AF=B5=C4=BC=EC=B2=E9=C8=DD=D2=D7=B3=F6=CE=CA=CC=E2=
+=A3=AC=B6=F8=C7=D2=BA=DC=BE=AD=B3=A3=BB=E1=B1=BB=B3=CC=D0=F2=D4=B1=
+=CD=FC=C1=CB=A1=A3=B5=B1=CE=D2=C3=C7=CA=B9=D3=C3=D2=BB=D0=A9frame=
+work=BB=F2=CA=C7ORM=B5=C4=CA=B1=BA=F2=A3=AC=D5=E2=D1=F9=B5=C4=CE=CA=
+=CC=E2=BB=E1=BA=C3=D2=BB=D0=A9=A1=A3</p><p style=3D"text-indent:=20=
+2em; margin: 1.2em 0em 1em; line-height: 20.3999996185303px; lett=
+er-spacing: 1px; color: rgb(51, 51, 51); font-family: Georgia, 'T=
+imes New Roman', 'Bitstream Charter', Times, serif; font-size: 12=
+px; background-color: rgb(255, 255, 255);">=D4=DA=D0=D4=C4=DC=B7=BD=
+=C3=E6=A3=AC=B5=B1=D2=BB=B8=F6=CF=E0=CD=AC=B5=C4=B2=E9=D1=AF=B1=BB=
+=CA=B9=D3=C3=B6=E0=B4=CE=B5=C4=CA=B1=BA=F2=A3=AC=D5=E2=BB=E1=CE=AA=
+=C4=E3=B4=F8=C0=B4=BF=C9=B9=DB=B5=C4=D0=D4=C4=DC=D3=C5=CA=C6=A1=A3=
+=C4=E3=BF=C9=D2=D4=B8=F8=D5=E2=D0=A9Prepared Statements=B6=A8=D2=E5=
+=D2=BB=D0=A9=B2=CE=CA=FD=A3=AC=B6=F8MySQL=D6=BB=BB=E1=BD=E2=CE=F6=
+=D2=BB=B4=CE=A1=A3</p><br><div style=3D"color:gray"><small>=C0=B4=
+=D4=B4=A3=BA&nbsp;&lt;<a href=3D"http://www.nowamagic.net/library=
+s/veda/detail/376">http://www.nowamagic.net/librarys/veda/detail/=
+376</a><small>&gt;</small></small></div><small><small>&nbsp;</sma=
+ll></small></div><div><h4 style=3D"margin: 1.5em 0px 0.5em; text-=
+indent: 24px; font-size: 14px; line-height: 21px; color: rgb(51,=20=
+51, 51); font-family: Georgia, 'Times New Roman', 'Bitstream Char=
+ter', Times, serif; background-color: rgb(255, 255, 255);">=B6=D4=
+=CF=F3=B9=D8=CF=B5=D3=B3=C9=E4=C6=F7=A3=A8Object Relational Mappe=
+r=A3=A9</h4></div><div><br></div><div><br></div><div><br></div><d=
+iv><br></div><div>zendstudio &nbsp; =B0=B2=D7=B0composer &nbsp;=D7=
+=A2=D2=E2=D0=E8=D2=AA=B4=F2opensslz=C0=A9=D5=B9</div><div><br></d=
+iv><div><br></div><div><br></div><div><h4 style=3D"margin: 1.5em=20=
+0px 0.5em; text-indent: 24px; font-size: 14px; line-height: 21px;=
+ color: rgb(51, 51, 51); font-family: Georgia, 'Times New Roman',=
+ 'Bitstream Charter', Times, serif; widows: auto; background-colo=
+r: rgb(255, 255, 255);">JSONP=D4=AD=C0=ED</h4><p style=3D"text-in=
+dent: 2em; margin: 1.2em 0em 1em; line-height: 20px; letter-spaci=
+ng: 1px; color: rgb(51, 51, 51); font-family: Georgia, 'Times New=
+ Roman', 'Bitstream Charter', Times, serif; font-size: 12px; wido=
+ws: auto; background-color: rgb(255, 255, 255);">JSONP=B5=C4=D7=EE=
+=BB=F9=B1=BE=B5=C4=D4=AD=C0=ED=CA=C7=A3=BA=B6=AF=CC=AC=CC=ED=BC=D3=
+=D2=BB=B8=F6&lt;script&gt;=B1=EA=C7=A9=A3=AC=B6=F8script=B1=EA=C7=
+=A9=B5=C4src=CA=F4=D0=D4=CA=C7=C3=BB=D3=D0=BF=E7=D3=F2=B5=C4=CF=DE=
+=D6=C6=B5=C4=A1=A3=D5=E2=D1=F9=CB=B5=C0=B4=A3=AC=D5=E2=D6=D6=BF=E7=
+=D3=F2=B7=BD=CA=BD=C6=E4=CA=B5=D3=EBajax XmlHttpRequest=D0=AD=D2=E9=
+=CE=DE=B9=D8=C1=CB=A1=A3</p><p style=3D"text-indent: 2em; margin:=
+ 1.2em 0em 1em; line-height: 20px; letter-spacing: 1px; color: rg=
+b(51, 51, 51); font-family: Georgia, 'Times New Roman', 'Bitstrea=
+m Charter', Times, serif; font-size: 12px; widows: auto; backgrou=
+nd-color: rgb(255, 255, 255);"><br></p><p style=3D"text-indent: 2=
+em; margin: 1.2em 0em 1em; line-height: 20px; letter-spacing: 1px=
+; color: rgb(51, 51, 51); font-family: Georgia, 'Times New Roman'=
+, 'Bitstream Charter', Times, serif; font-size: 12px; widows: aut=
+o; background-color: rgb(255, 255, 255);"><br></p><p style=3D"tex=
+t-indent: 2em; margin: 1.2em 0em 1em; line-height: 20px; letter-s=
+pacing: 1px; color: rgb(51, 51, 51); font-family: Georgia, 'Times=
+ New Roman', 'Bitstream Charter', Times, serif; font-size: 12px;=20=
+widows: auto; background-color: rgb(255, 255, 255);"><ol start=3D=
+"1" class=3D"dp-c" style=3D"padding: 0px; border: none; list-styl=
+e-position: initial; list-style-image: initial; color: rgb(92, 92=
+, 92); font-family: Consolas, 'Courier New', Courier, mono, serif=
+; font-size: 12px; letter-spacing: normal; line-height: 26px; tex=
+t-indent: 0px; margin: 0px 0px 1px 45px !important;"><li class=3D=
+"alt" style=3D"border-style: none none none solid; border-left-wi=
+dth: 3px; border-left-color: rgb(108, 226, 108); list-style: deci=
+mal-leading-zero outside; color: inherit; line-height: 18px; marg=
+in: 0px !important; padding: 0px 3px 0px 10px !important;"><span=20=
+style=3D"margin: 0px; padding: 0px; border: none; color: black; b=
+ackground-color: inherit;"><span class=3D"vars" style=3D"margin:=20=
+0px; padding: 0px; border: none; color: rgb(221, 0, 0); backgroun=
+d-color: inherit;">$a</span><span style=3D"margin: 0px; padding:=20=
+0px; border: none; background-color: inherit;">&nbsp;=3D&nbsp;</s=
+pan><span class=3D"keyword" style=3D"margin: 0px; padding: 0px; b=
+order: none; color: rgb(0, 102, 153); background-color: inherit;=20=
+font-weight: bold;">array</span><span style=3D"margin: 0px; paddi=
+ng: 0px; border: none; background-color: inherit;">(1,2,3,4);&nbs=
+p;&nbsp;</span></span></li><li class=3D"" style=3D"border-style:=20=
+none none none solid; border-left-width: 3px; border-left-color:=20=
+rgb(108, 226, 108); list-style: decimal-leading-zero outside; lin=
+e-height: 18px; margin: 0px !important; padding: 0px 3px 0px 10px=
+ !important;"><span style=3D"margin: 0px; padding: 0px; border: n=
+one; color: black; background-color: inherit;"><span class=3D"key=
+word" style=3D"margin: 0px; padding: 0px; border: none; color: rg=
+b(0, 102, 153); background-color: inherit; font-weight: bold;">fo=
+reach</span><span style=3D"margin: 0px; padding: 0px; border: non=
+e; background-color: inherit;">(</span><span class=3D"vars" style=
+=3D"margin: 0px; padding: 0px; border: none; color: rgb(221, 0, 0=
+); background-color: inherit;">$a</span><span style=3D"margin: 0p=
+x; padding: 0px; border: none; background-color: inherit;">&nbsp;=
+</span><span class=3D"keyword" style=3D"margin: 0px; padding: 0px=
+; border: none; color: rgb(0, 102, 153); background-color: inheri=
+t; font-weight: bold;">as</span><span style=3D"margin: 0px; paddi=
+ng: 0px; border: none; background-color: inherit;">&nbsp;&amp;</s=
+pan><span class=3D"vars" style=3D"margin: 0px; padding: 0px; bord=
+er: none; color: rgb(221, 0, 0); background-color: inherit;">$v</=
+span><span style=3D"margin: 0px; padding: 0px; border: none; back=
+ground-color: inherit;">){&nbsp;&nbsp;</span></span></li><li clas=
+s=3D"alt" style=3D"border-style: none none none solid; border-lef=
+t-width: 3px; border-left-color: rgb(108, 226, 108); list-style:=20=
+decimal-leading-zero outside; color: inherit; line-height: 18px;=20=
+margin: 0px !important; padding: 0px 3px 0px 10px !important;"><s=
+pan style=3D"margin: 0px; padding: 0px; border: none; color: blac=
+k; background-color: inherit;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<spa=
+n class=3D"vars" style=3D"margin: 0px; padding: 0px; border: none=
+; color: rgb(221, 0, 0); background-color: inherit;">$v</span><sp=
+an style=3D"margin: 0px; padding: 0px; border: none; background-c=
+olor: inherit;">&nbsp;*=3D&nbsp;</span><span class=3D"vars" style=
+=3D"margin: 0px; padding: 0px; border: none; color: rgb(221, 0, 0=
+); background-color: inherit;">$v</span><span style=3D"margin: 0p=
+x; padding: 0px; border: none; background-color: inherit;">;&nbsp=
+;&nbsp;</span></span></li><li class=3D"" style=3D"border-style: n=
+one none none solid; border-left-width: 3px; border-left-color: r=
+gb(108, 226, 108); list-style: decimal-leading-zero outside; line=
+-height: 18px; margin: 0px !important; padding: 0px 3px 0px 10px=20=
+!important;"><span style=3D"margin: 0px; padding: 0px; border: no=
+ne; color: black; background-color: inherit;">}&nbsp;&nbsp;</span=
+></li><li class=3D"alt" style=3D"border-style: none none none sol=
+id; border-left-width: 3px; border-left-color: rgb(108, 226, 108)=
+; list-style: decimal-leading-zero outside; color: inherit; line-=
+height: 18px; margin: 0px !important; padding: 0px 3px 0px 10px !=
+important;"><span style=3D"margin: 0px; padding: 0px; border: non=
+e; color: black; background-color: inherit;">&nbsp;&nbsp;&nbsp;</=
+span></li><li class=3D"" style=3D"border-style: none none none so=
+lid; border-left-width: 3px; border-left-color: rgb(108, 226, 108=
+); list-style: decimal-leading-zero outside; line-height: 18px; m=
+argin: 0px !important; padding: 0px 3px 0px 10px !important;"><sp=
+an style=3D"margin: 0px; padding: 0px; border: none; color: black=
+; background-color: inherit;"><span class=3D"keyword" style=3D"ma=
+rgin: 0px; padding: 0px; border: none; color: rgb(0, 102, 153); b=
+ackground-color: inherit; font-weight: bold;">foreach</span><span=
+ style=3D"margin: 0px; padding: 0px; border: none; background-col=
+or: inherit;">(</span><span class=3D"vars" style=3D"margin: 0px;=20=
+padding: 0px; border: none; color: rgb(221, 0, 0); background-col=
+or: inherit;">$a</span><span style=3D"margin: 0px; padding: 0px;=20=
+border: none; background-color: inherit;">&nbsp;</span><span clas=
+s=3D"keyword" style=3D"margin: 0px; padding: 0px; border: none; c=
+olor: rgb(0, 102, 153); background-color: inherit; font-weight: b=
+old;">as</span><span style=3D"margin: 0px; padding: 0px; border:=20=
+none; background-color: inherit;">&nbsp;</span><span class=3D"var=
+s" style=3D"margin: 0px; padding: 0px; border: none; color: rgb(2=
+21, 0, 0); background-color: inherit;">$v</span><span style=3D"ma=
+rgin: 0px; padding: 0px; border: none; background-color: inherit;=
+">){&nbsp;&nbsp;</span></span></li><li class=3D"alt" style=3D"bor=
+der-style: none none none solid; border-left-width: 3px; border-l=
+eft-color: rgb(108, 226, 108); list-style: decimal-leading-zero o=
+utside; color: inherit; line-height: 18px; margin: 0px !important=
+; padding: 0px 3px 0px 10px !important;"><span style=3D"margin: 0=
+px; padding: 0px; border: none; color: black; background-color: i=
+nherit;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=3D"func" style=
+=3D"margin: 0px; padding: 0px; border: none; background-color: in=
+herit;">echo</span><span style=3D"margin: 0px; padding: 0px; bord=
+er: none; background-color: inherit;">&nbsp;</span><span class=3D=
+"vars" style=3D"margin: 0px; padding: 0px; border: none; color: r=
+gb(221, 0, 0); background-color: inherit;">$v</span><span style=3D=
+"margin: 0px; padding: 0px; border: none; background-color: inher=
+it;">;&nbsp;&nbsp;</span></span></li><li class=3D"" style=3D"bord=
+er-style: none none none solid; border-left-width: 3px; border-le=
+ft-color: rgb(108, 226, 108); list-style: decimal-leading-zero ou=
+tside; line-height: 18px; margin: 0px !important; padding: 0px 3p=
+x 0px 10px !important;"><span style=3D"margin: 0px; padding: 0px;=
+ border: none; color: black; background-color: inherit;">} &nbsp;=
+ &nbsp; &nbsp; &nbsp; =D7=A2=D2=E2=D2=FD=D3=C3 &nbsp;$v=B1=E4=B3=C9=
+=D7=EE=BA=F3=D2=BB=B8=F6=D2=FD=D3=C3=BB=E1=B8=C4=B1=E4=D6=B5=A1=A3=
+=A3=A1=A3=A1</span></li></ol></p></div></div></body></html>
+
+------=_Next_Part_0006198421.771--
+
+------=_Next_Part_0018595263.726--
+
