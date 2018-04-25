@@ -1,0 +1,1 @@
+update set name = '' when id = 1 then end where id in();
