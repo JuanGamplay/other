@@ -1,4 +1,11 @@
-            $('tbody tr td .del').click(function () {
+    
+
+http://www.hhailuo.com/tp-admin-v5/%E8%B7%AF%E7%94%B1
+http://www.hhailuo.com/lee/
+
+
+
+$('tbody tr td .del').click(function () {
                 var id = $(this).attr('rel');
                 $.ajax({
                     type: 'post',
