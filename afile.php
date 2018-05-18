@@ -1,4 +1,6 @@
-    
+http://shouce.jb51.net/nginx-doc/Text/7.4_loadbalance.html    
+
+
 https://www.processon.com/signup/submit
 
 https://zhuanlan.zhihu.com/p/25960208 <https://zhuanlan.zhihu.com/p/25960208>  
