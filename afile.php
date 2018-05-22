@@ -1,3 +1,5 @@
+http://www.hhailuo.com/archives/18546
+
 http://shouce.jb51.net/nginx-doc/Text/7.4_loadbalance.html    
 
 
