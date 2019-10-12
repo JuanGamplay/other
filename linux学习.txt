@@ -1,1 +1,2 @@
 recipe  安装软件包目录不对     可以直接修改对应conf
+https://nginxconfig.io/
