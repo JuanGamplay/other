@@ -10,3 +10,8 @@ sudo yum-config-manager --enable remi-php74
 sudo yum install php php-cli XXXXX
 
 yum install php74.x86_64 php74-php.x86_64 php74-php-bcmath.x86_64 php74-php-cli.x86_64 php74-php-common.x86_64 php74-php-devel.x86_64 php74-php-fpm.x86_64 php74-php-gd.x86_64 php74-php-intl.x86_64  php74-php-json.x86_64 php74-php-libvirt.x86_64 php74-php-mbstring.x86_64 php74-php-mysqlnd.x86_64 php74-php-odbc.x86_64 php74-php-pdo.x86_64 php74-php-pear.noarch php74-php-phpiredis.x86_64  php74-php-pgsql.x86_64  php74-php-soap.x86_64 php74-xhprof.noarch
+
+
+https://www.24kplus.com/linux/1571.html
+
+https://www.cnblogs.com/alliancehacker/p/12255445.html
