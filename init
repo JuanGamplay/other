@@ -15,3 +15,6 @@ yum install php74.x86_64 php74-php.x86_64 php74-php-bcmath.x86_64 php74-php-cli.
 https://www.24kplus.com/linux/1571.html
 
 https://www.cnblogs.com/alliancehacker/p/12255445.html
+
+
+ps aux | grep -v root | grep php-fpm | cut -d\  -f1 | sort | uniq
